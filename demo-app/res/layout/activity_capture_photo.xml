@@ -2,9 +2,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    style="@style/VerticalLayout">
 
     <TextView
         android:text="@string/file_name"
@@ -18,9 +16,16 @@
         android:layout_height="wrap_content"
         android:inputType="text"/>
 
+    <ImageView
+        android:id="@+id/captured_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:contentDescription="@string/captured_image"/>
+
     <Button
-        android:id="@+id/capture"
         android:text="@string/button_capture"
+        android:onClick="captureClick"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 

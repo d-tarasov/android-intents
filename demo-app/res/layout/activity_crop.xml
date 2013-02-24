@@ -2,12 +2,10 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    style="@style/VerticalLayout">
 
     <TextView
-        android:text="Source image"
+        android:text="@string/source_image"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
@@ -19,7 +17,7 @@
         android:contentDescription="@string/in_img"/>
 
     <TextView
-        android:text="Cropped image"
+        android:text="@string/cropped_image"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
@@ -31,8 +29,8 @@
         android:contentDescription="@string/out_img"/>
 
     <Button
-        android:id="@+id/crop"
         android:text="@string/crop"
+        android:onClick="cropClick"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"/>

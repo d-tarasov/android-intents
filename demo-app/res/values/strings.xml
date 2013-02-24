@@ -15,5 +15,9 @@
     <string name="out_img">Output image</string>
     <string name="crop_app_unavailable">Crop app isn\'t available in your system</string>
     <string name="cropped">Cropped</string>
+    <string name="crop_cancelled">Cancelled</string>
+    <string name="source_image">Source image</string>
+    <string name="cropped_image">Cropped image</string>
+    <string name="captured_image">Captured Image</string>
 
 </resources>
