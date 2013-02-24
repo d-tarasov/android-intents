@@ -9,4 +9,11 @@
     <string name="captured">Captured</string>
     <string name="cancelled">Cancelled</string>
 
+    <string name="crop_image">Crop Image</string>
+    <string name="crop">Crop</string>
+    <string name="in_img">Input image</string>
+    <string name="out_img">Output image</string>
+    <string name="crop_app_unavailable">Crop app isn\'t available in your system</string>
+    <string name="cropped">Cropped</string>
+
 </resources>

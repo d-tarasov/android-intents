@@ -34,6 +34,7 @@ public class MainActivity extends ListActivity {
     private List<ListItem> fillItems() {
         List<ListItem> items = new ArrayList<ListItem>();
         items.add(new ListItem(R.string.capture_photo, new Intent(this, CapturePhotoActivity.class)));
+        items.add(new ListItem(R.string.crop_image, new Intent(this, CropActivity.class)));
         return items;
     }
 

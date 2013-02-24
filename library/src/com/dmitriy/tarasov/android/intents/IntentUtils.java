@@ -1,5 +1,6 @@
 package com.dmitriy.tarasov.android.intents;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +15,31 @@ import java.util.List;
  * @author Dmitriy Tarasov
  */
 public class IntentUtils {
+
+    public static boolean isCropAvailable(Context context) {
+        Intent intent = new Intent("com.android.camera.action.CROP");
+        intent.setType("image/*");
+        return IntentUtils.isIntentAvailable(context, intent);
+    }
+
+    public static Intent crop(Context context, File image) {
+        Intent intent = new Intent("com.android.camera.action.CROP");
+        intent.setType("image/*");
+
+        List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent, 0);
+        ResolveInfo res = list.get(0);
+
+        intent.putExtra("outputX", 200);
+        intent.putExtra("outputY", 200);
+        intent.putExtra("aspectX", 1);
+        intent.putExtra("aspectY", 1);
+        intent.putExtra("scale", true);
+        intent.putExtra("return-data", true);
+        intent.setData(Uri.fromFile(image));
+
+        intent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
+        return intent;
+    }
 
     /**
      * Call standard camera application for capturing an image
