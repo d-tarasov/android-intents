@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Intents Collection</string>
+
+    <string name="capture_photo">Capture Photo</string>
+    <string name="file_name">File Name</string>
+    <string name="default_file_name">CapturedPhoto.jpg</string>
+    <string name="button_capture">Capture</string>
+    <string name="captured">Captured</string>
+    <string name="cancelled">Cancelled</string>
+
+</resources>
