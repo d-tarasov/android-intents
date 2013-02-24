@@ -16,24 +16,46 @@ import java.util.List;
  */
 public class IntentUtils {
 
+    /**
+     * Check that cropping application is available
+     *
+     * @param context Application context
+     * @return true if cropping app is available
+     * @see #crop(android.content.Context, java.io.File, int, int, int, int, boolean)
+     */
     public static boolean isCropAvailable(Context context) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setType("image/*");
         return IntentUtils.isIntentAvailable(context, intent);
     }
 
-    public static Intent crop(Context context, File image) {
+    /**
+     * Crop image. Before using, crop requires especial check that differs from
+     * {@link #isIntentAvailable(android.content.Context, android.content.Intent)}
+     * see {@link #isCropAvailable(android.content.Context)} instead
+     *
+     * @param context Application context
+     * @param image   Image that will be used for cropping. This image is not changed during the crop
+     * @param outputX Output image width
+     * @param outputY Output image height
+     * @param aspectX Crop frame aspect X
+     * @param aspectY Crop frame aspect Y
+     * @param scale   Scale or not cropped image if output image and crop frame sizes differs
+     * @return Intent with <code>data</code>-extra in <code>onActivityResult</code> which contains result as a
+     *         {@link android.graphics.Bitmap}. See demo app for details
+     */
+    public static Intent crop(Context context, File image, int outputX, int outputY, int aspectX, int aspectY, boolean scale) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setType("image/*");
 
         List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent, 0);
         ResolveInfo res = list.get(0);
 
-        intent.putExtra("outputX", 200);
-        intent.putExtra("outputY", 200);
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
-        intent.putExtra("scale", true);
+        intent.putExtra("outputX", outputX);
+        intent.putExtra("outputY", outputY);
+        intent.putExtra("aspectX", aspectX);
+        intent.putExtra("aspectY", aspectY);
+        intent.putExtra("scale", scale);
         intent.putExtra("return-data", true);
         intent.setData(Uri.fromFile(image));
 

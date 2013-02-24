@@ -69,7 +69,7 @@ public class CropActivity extends Activity {
     public void cropClick(View view) {
         boolean isCropAvailable = IntentUtils.isCropAvailable(CropActivity.this);
         if(isCropAvailable) {
-            Intent intent = IntentUtils.crop(CropActivity.this, inImage);
+            Intent intent = IntentUtils.crop(CropActivity.this, inImage, 200, 200, 2, 1, false);
             startActivityForResult(intent, CROP_REQUEST_CODE);
         } else {
             Toast.makeText(CropActivity.this, R.string.crop_app_unavailable, Toast.LENGTH_SHORT).show();
