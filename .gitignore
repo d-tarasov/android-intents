@@ -22,3 +22,7 @@ local.properties
 # Idea project files
 *.iml
 */*.iml
+
+# Maven output
+target/
+*/target

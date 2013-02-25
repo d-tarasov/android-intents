@@ -14,6 +14,9 @@ At this moment collection includes this intents
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
+## Installation
+how to with maven
+
 ## Release History
 
 ### V0.0.1 (?): First release
@@ -31,15 +34,12 @@ At this moment collection includes this intents
 - add show on map intent
 - app chooser dialog
 - show video intent
+- http://developer.android.com/guide/appendix/g-app-intents.html
 - proguard instructions
-- maven build
 - prepare demo and upload to play store
 - manifest for library
 - integration with zxing intent integrator
 - image for lib =)
-
-## Installation
-how to with maven
 
 License
 -----

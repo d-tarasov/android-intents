@@ -16,10 +16,9 @@
   -->
 
 <resources>
-    <style name="VerticalLayout">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:padding">5dp</item>
+
+    <style name="DemoApp.Theme" parent="@android:style/Theme.Light">
+
     </style>
+
 </resources>
