@@ -11,11 +11,11 @@ TODO
 - add send email
 - add show on map intent
 - app chooser dialog
+- show video intent
 - proguard instructions
 - maven build
 - license notes
 - prepare demo and upload to play store
-- configurable via UI crop params
 - add the list of projects that uses android-intents =)
 - manifest for library
 - integration with zxing intent integrator

@@ -7,6 +7,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.dmitriy.tarasov.android.intents.IntentUtils;
@@ -25,7 +27,22 @@ public class CropActivity extends Activity {
     private static final int CROP_REQUEST_CODE = 0;
     private static final int QUALITY = 100;
 
+    private static final int DEFAULT_OUTPUT_X = 200;
+    private static final int DEFAULT_OUTPUT_Y = 200;
+    private static final int DEFAULT_ASPECT_X = 1;
+    private static final int DEFAULT_ASPECT_Y = 1;
+
+    private static final boolean DEFAULT_SCALE = true;
+
     private File inImage;
+    private Bitmap bmp;
+
+    private EditText outputX;
+    private EditText outputY;
+    private EditText aspectX;
+    private EditText aspectY;
+
+    private CheckBox scale;
 
     private ImageView in;
     private ImageView out;
@@ -35,7 +52,7 @@ public class CropActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crop);
 
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.raw.sample);
+        bmp = BitmapFactory.decodeResource(getResources(), R.raw.sample);
         try {
             inImage = new File("/sdcard/tmp.jpg");
             bmp.compress(Bitmap.CompressFormat.JPEG, QUALITY, new FileOutputStream(inImage));
@@ -43,9 +60,23 @@ public class CropActivity extends Activity {
             Log.e(TAG, "Cannot write image to SDCARD", e);
         }
 
+        initViews();
+    }
+
+    private void initViews() {
+        outputX = (EditText) findViewById(R.id.output_x);
+        outputY = (EditText) findViewById(R.id.output_y);
+        aspectX = (EditText) findViewById(R.id.aspect_x);
+        aspectY = (EditText) findViewById(R.id.aspect_y);
+        scale = (CheckBox) findViewById(R.id.scale);
         in = (ImageView) findViewById(R.id.in);
         out = (ImageView) findViewById(R.id.out);
 
+        outputX.setText(String.valueOf(DEFAULT_OUTPUT_X));
+        outputY.setText(String.valueOf(DEFAULT_OUTPUT_Y));
+        aspectX.setText(String.valueOf(DEFAULT_ASPECT_X));
+        aspectY.setText(String.valueOf(DEFAULT_ASPECT_Y));
+        scale.setChecked(DEFAULT_SCALE);
         in.setImageBitmap(bmp);
     }
 
@@ -69,7 +100,13 @@ public class CropActivity extends Activity {
     public void cropClick(View view) {
         boolean isCropAvailable = IntentUtils.isCropAvailable(CropActivity.this);
         if(isCropAvailable) {
-            Intent intent = IntentUtils.crop(CropActivity.this, inImage, 200, 200, 2, 1, false);
+            Intent intent = IntentUtils.cropImage(CropActivity.this,
+                    inImage,
+                    Integer.valueOf(outputX.getText().toString()),
+                    Integer.valueOf(outputY.getText().toString()),
+                    Integer.valueOf(aspectX.getText().toString()),
+                    Integer.valueOf(aspectX.getText().toString()),
+                    scale.isChecked());
             startActivityForResult(intent, CROP_REQUEST_CODE);
         } else {
             Toast.makeText(CropActivity.this, R.string.crop_app_unavailable, Toast.LENGTH_SHORT).show();

@@ -21,7 +21,7 @@ public class IntentUtils {
      *
      * @param context Application context
      * @return true if cropping app is available
-     * @see #crop(android.content.Context, java.io.File, int, int, int, int, boolean)
+     * @see #cropImage(android.content.Context, java.io.File, int, int, int, int, boolean)
      */
     public static boolean isCropAvailable(Context context) {
         Intent intent = new Intent("com.android.camera.action.CROP");
@@ -30,21 +30,21 @@ public class IntentUtils {
     }
 
     /**
-     * Crop image. Before using, crop requires especial check that differs from
+     * Crop image. Before using, cropImage requires especial check that differs from
      * {@link #isIntentAvailable(android.content.Context, android.content.Intent)}
      * see {@link #isCropAvailable(android.content.Context)} instead
      *
      * @param context Application context
-     * @param image   Image that will be used for cropping. This image is not changed during the crop
+     * @param image   Image that will be used for cropping. This image is not changed during the cropImage
      * @param outputX Output image width
      * @param outputY Output image height
      * @param aspectX Crop frame aspect X
      * @param aspectY Crop frame aspect Y
-     * @param scale   Scale or not cropped image if output image and crop frame sizes differs
+     * @param scale   Scale or not cropped image if output image and cropImage frame sizes differs
      * @return Intent with <code>data</code>-extra in <code>onActivityResult</code> which contains result as a
      *         {@link android.graphics.Bitmap}. See demo app for details
      */
-    public static Intent crop(Context context, File image, int outputX, int outputY, int aspectX, int aspectY, boolean scale) {
+    public static Intent cropImage(Context context, File image, int outputX, int outputY, int aspectX, int aspectY, boolean scale) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setType("image/*");
 

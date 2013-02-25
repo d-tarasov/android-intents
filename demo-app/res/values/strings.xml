@@ -19,5 +19,10 @@
     <string name="source_image">Source image</string>
     <string name="cropped_image">Cropped image</string>
     <string name="captured_image">Captured Image</string>
+    <string name="output_x_title">Output X</string>
+    <string name="output_y_title">Output Y</string>
+    <string name="aspect_x_title">Aspect X</string>
+    <string name="aspect_y_title">Aspect Y</string>
+    <string name="scale">Scale</string>
 
 </resources>
