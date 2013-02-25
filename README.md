@@ -1,9 +1,28 @@
-android-intents
-===============
+#android-intents
 
-A collection of well-known Android intents for most common actions
+A collection of well-known Android intents for most common actions. 
+Helps you call thirdparty apps to do generic work instead of you. 
+You can call camera app for taking photos, share text, make calls, 
+send SMS messages, scan barcodes and QR-codes and more. See methods 
+and javadocs of `IntentUtils` class inside of library. Also demo app 
+available at [Play Store](http://my_demo_app).
 
-TODO
+## Intents Collection
+
+At this moment collection includes this intents
+
+- **Capture Photo** - call standard camera app for taking a shot
+- **Crop Image** - call gallery app to crop your image
+
+## Release History
+
+### V0.0.1 (?): First release
+- Capture photo intent
+- Crop image intents
+- `isIntentAvailable` method for checking thirdparty apps availability
+- Demo application
+
+### Future releases
 - write readme
 - add share intent
 - add send sms
@@ -14,8 +33,14 @@ TODO
 - show video intent
 - proguard instructions
 - maven build
-- license notes
 - prepare demo and upload to play store
-- add the list of projects that uses android-intents =)
 - manifest for library
 - integration with zxing intent integrator
+- image for lib =)
+
+## Installation
+how to with maven
+
+License
+-----
+[Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
