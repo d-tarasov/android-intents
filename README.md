@@ -1,6 +1,7 @@
 #android-intents
 
 ![Example Image][1]
+
 A collection of well-known Android intents for most common actions. 
 Helps you call thirdparty apps to do generic work instead of you. 
 You can call camera app for taking photos, share text, make calls, 
