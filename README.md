@@ -1,5 +1,6 @@
 #android-intents
 
+![Example Image][1]
 A collection of well-known Android intents for most common actions. 
 Helps you call thirdparty apps to do generic work instead of you. 
 You can call camera app for taking photos, share text, make calls, 
@@ -34,13 +35,19 @@ how to with maven
 - add show on map intent
 - app chooser dialog
 - show video intent
+- open market page
+- open settings to enable gps
 - http://developer.android.com/guide/appendix/g-app-intents.html
 - proguard instructions
 - prepare demo and upload to play store
 - manifest for library
 - integration with zxing intent integrator
-- image for lib =)
 
 License
 -----
 [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+
+
+[1]: https://raw.github.com/d-tarasov/android-intents/master/logo.png
