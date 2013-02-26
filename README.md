@@ -17,7 +17,7 @@ At this moment collection includes this intents
 - **Crop Image** - call gallery app to crop your image
 
 ## Installation
-- add following repository into your pom.xml
+- add the following repository into your pom.xml
 
 ```xml
 <repository>
