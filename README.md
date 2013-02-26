@@ -13,8 +13,8 @@ available at [Play Store](http://my_demo_app).
 
 At this moment collection includes this intents
 
-- **Call Phone - call to phone using standard dialer
-- **Dial Phone - opens standard dialer without starting a call
+- **Call Phone** - call to phone using standard dialer
+- **Dial Phone** - opens standard dialer without starting a call
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
