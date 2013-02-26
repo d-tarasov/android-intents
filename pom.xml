@@ -87,6 +87,13 @@
         <android.platform>17</android.platform>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>d-tarasov-releases</id>
+            <url>https://github.com/d-tarasov/maven-repo/raw/master/releases</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>android</groupId>

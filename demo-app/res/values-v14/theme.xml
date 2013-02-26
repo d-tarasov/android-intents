@@ -17,7 +17,7 @@
 
 <resources>
 
-    <style name="DemoApp.Theme" parent="android:Theme.Light">
+    <style name="DemoApp.Theme" parent="android:Theme.DeviceDefault.Light">
 
     </style>
 

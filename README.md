@@ -56,9 +56,7 @@ At this moment collection includes this intents
 - open market page
 - open settings to enable gps
 - http://developer.android.com/guide/appendix/g-app-intents.html
-- proguard instructions
 - prepare demo and upload to play store
-- manifest for library
 - integration with zxing intent integrator
 
 License

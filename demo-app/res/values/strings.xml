@@ -19,7 +19,7 @@
     <string name="app_name">Android Intents Collection</string>
 
     <string name="capture_photo">Capture Photo</string>
-    <string name="file_name">File Name</string>
+    <string name="file_name">File name</string>
     <string name="default_file_name">CapturedPhoto.jpg</string>
     <string name="button_capture">Capture</string>
     <string name="captured">Captured</string>
