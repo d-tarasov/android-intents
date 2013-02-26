@@ -34,6 +34,41 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Opens the Maps application to the given location.
+     *
+     * @param latitude  Latitude
+     * @param longitude Longitude
+     * @param zoomLevel A zoom level of 1 shows the whole Earth, centered at the given lat,lng.
+     *                  A zoom level of 2 shows a quarter of the Earth, and so on. The highest zoom level is 23.
+     *                  A larger zoom level will be clamped to 23.
+     * @see #findLocation(String, Integer)
+     */
+    public static Intent showLocation(float latitude, float longitude, Integer zoomLevel) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        String data = String.format("geo:%s,%s", latitude, longitude);
+        if (zoomLevel != null) {
+            data = String.format("%s?z=%s", data, zoomLevel);
+        }
+        intent.setData(Uri.parse(data));
+        return intent;
+    }
+
+    /**
+     * Opens the Maps application to the given query.
+     *
+     * @param query     Query string
+     * @see #showLocation(float, float, Integer)
+     */
+    public static Intent findLocation(String query) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        String data = String.format("geo:0,0?q=%s", query);
+        intent.setData(Uri.parse(data));
+        return intent;
+    }
+
+    /**
      * Open a browser window to the URL specified.
      *
      * @param url Target url
@@ -57,7 +92,7 @@ public class IntentUtils {
      * Valid examples include the following:
      * tel:2125551212
      * tel: (212) 555 1212
-     *
+     * <p/>
      * Note: This requires your application to request the following permission in your manifest:
      * <code>&lt;uses-permission android:name="android.permission.CALL_PHONE"/&gt;</code>
      *

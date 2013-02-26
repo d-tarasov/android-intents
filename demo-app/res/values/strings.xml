@@ -58,4 +58,17 @@
     <string name="default_url">http://github.com/d-tarasov/android-intents</string>
     <string name="open">Open</string>
 
+    <string name="show_location">Show Location</string>
+    <string name="show_location_descr">opens the Maps application to the given coordinates</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="zoom_level">Zoom level</string>
+    <string name="show">Show</string>
+
+    <string name="find_location">Find Location</string>
+    <string name="find_location_descr">opens the Maps application to the given query</string>
+    <string name="default_query">Samara, ulitsa Sanfirovoy</string>
+    <string name="query_string">Query string</string>
+    <string name="find">Find</string>
+
 </resources>

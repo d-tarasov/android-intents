@@ -55,6 +55,8 @@ public class MainActivity extends ListActivity {
         addListItem(items, R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);
         addListItem(items, R.string.dial_phone, R.string.dial_phone_descr, DialPhoneActivity.class);
         addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
+        addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
+        addListItem(items, R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
         return items;
     }
 

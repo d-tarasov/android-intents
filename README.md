@@ -13,6 +13,8 @@ available at [Play Store](http://my_demo_app).
 
 At this moment collection includes this intents
 
+- **Show Location** - opens the Maps application to the given coordinates
+- **Find Location** - opens the Maps application to the given query
 - **Call Phone** - call to phone using standard dialer
 - **Dial Phone** - opens standard dialer without starting a call
 - **Open Link** - opens a web page in standard browser
@@ -46,6 +48,7 @@ At this moment collection includes this intents
 - Crop image intents
 - Dialer intents
 - Browser intents
+- Map intents
 - `isIntentAvailable` method for checking thirdparty apps availability
 - Demo application
 
@@ -53,7 +56,6 @@ At this moment collection includes this intents
 - add share intent
 - add send sms
 - add send email
-- add show on map intent
 - app chooser dialog
 - show video intent
 - open market page

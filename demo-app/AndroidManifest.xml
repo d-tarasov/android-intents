@@ -49,5 +49,9 @@
 
         <activity android:name=".OpenLinkActivity"/>
 
+        <activity android:name=".ShowLocationActivity"/>
+
+        <activity android:name=".FindLocationActivity"/>
+
     </application>
 </manifest> 
