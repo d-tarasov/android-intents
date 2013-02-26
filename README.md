@@ -18,13 +18,16 @@ At this moment collection includes this intents
 
 ## Installation
 - add following repository into your pom.xml
+
 ```xml
 <repository>
   <id>repo</id>
   <url>https://github.com/d-tarasov/maven-repo/raw/master/releases</url>
 </repository>
 ```
+
 - add dependency
+
 ```xml
 <dependency>
   <groupId>com.dmitriy.tarasov</groupId>
