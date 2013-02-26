@@ -83,16 +83,9 @@
 
         <project.verbosity>true</project.verbosity>
 
-        <android.version>4.2_r1</android.version>
+        <android.version>4.2.2_r2</android.version>
         <android.platform>17</android.platform>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>d-tarasov-releases</id>
-            <url>https://github.com/d-tarasov/maven-repo/raw/master/releases</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
