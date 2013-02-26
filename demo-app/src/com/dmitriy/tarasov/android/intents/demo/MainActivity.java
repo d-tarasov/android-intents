@@ -48,11 +48,14 @@ public class MainActivity extends ListActivity {
     private List<ListItem> fillItems() {
         List<ListItem> items = new ArrayList<ListItem>();
         items.add(new ListItem(R.string.capture_photo, new Intent(this, CapturePhotoActivity.class)));
-        items.add(new ListItem(R.string.crop_image, new Intent(this, CropActivity.class)));
+        items.add(new ListItem(R.string.crop_image, new Intent(this, CropImageActivity.class)));
+        items.add(new ListItem(R.string.call_phone, new Intent(this, CallPhoneActivity.class)));
+        items.add(new ListItem(R.string.dial_phone, new Intent(this, DialPhoneActivity.class)));
         return items;
     }
 
     private void initViews(List<ListItem> listItems) {
+        // TODO two rows list item with description at second row
         ListAdapter adapter = new ArrayAdapter<ListItem>(
                 this,
                 android.R.layout.simple_list_item_1,

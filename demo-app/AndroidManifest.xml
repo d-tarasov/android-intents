@@ -22,7 +22,7 @@
     android:versionName="0.0.1">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission."/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <uses-sdk
         android:minSdkVersion="4"
@@ -41,7 +41,11 @@
 
         <activity android:name=".CapturePhotoActivity"/>
 
-        <activity android:name=".CropActivity"/>
+        <activity android:name=".CropImageActivity"/>
+
+        <activity android:name=".CallPhoneActivity"/>
+
+        <activity android:name=".DialPhoneActivity"/>
 
     </application>
 </manifest> 

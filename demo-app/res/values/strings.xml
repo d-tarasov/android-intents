@@ -41,4 +41,11 @@
     <string name="aspect_y_title">Aspect Y</string>
     <string name="scale">Scale</string>
 
+    <string name="call_phone">Call Phone</string>
+    <string name="phone_number">Phone number</string>
+    <string name="default_phone">8 927 777 77 77</string>
+    <string name="call">Call</string>
+
+    <string name="dial_phone">Dial Phone</string>
+
 </resources>

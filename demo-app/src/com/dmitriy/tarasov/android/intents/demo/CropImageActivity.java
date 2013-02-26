@@ -36,9 +36,9 @@ import java.io.FileOutputStream;
 /**
  * @author Dmitriy Tarasov
  */
-public class CropActivity extends Activity {
+public class CropImageActivity extends Activity {
 
-    private static final String TAG = CropActivity.class.getName();
+    private static final String TAG = CropImageActivity.class.getName();
 
     private static final int CROP_REQUEST_CODE = 0;
     private static final int QUALITY = 100;
@@ -114,9 +114,9 @@ public class CropActivity extends Activity {
     }
 
     public void cropClick(View view) {
-        boolean isCropAvailable = IntentUtils.isCropAvailable(CropActivity.this);
+        boolean isCropAvailable = IntentUtils.isCropAvailable(CropImageActivity.this);
         if(isCropAvailable) {
-            Intent intent = IntentUtils.cropImage(CropActivity.this,
+            Intent intent = IntentUtils.cropImage(CropImageActivity.this,
                     inImage,
                     Integer.valueOf(outputX.getText().toString()),
                     Integer.valueOf(outputY.getText().toString()),
@@ -125,7 +125,7 @@ public class CropActivity extends Activity {
                     scale.isChecked());
             startActivityForResult(intent, CROP_REQUEST_CODE);
         } else {
-            Toast.makeText(CropActivity.this, R.string.crop_app_unavailable, Toast.LENGTH_SHORT).show();
+            Toast.makeText(CropImageActivity.this, R.string.crop_app_unavailable, Toast.LENGTH_SHORT).show();
         }
     }
 }

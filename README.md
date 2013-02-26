@@ -13,6 +13,8 @@ available at [Play Store](http://my_demo_app).
 
 At this moment collection includes this intents
 
+- **Call Phone - call to phone using standard dialer
+- **Dial Phone - opens standard dialer without starting a call
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
@@ -41,14 +43,13 @@ At this moment collection includes this intents
 ### V0.0.1 (?): First release
 - Capture photo intent
 - Crop image intents
+- Dialer intents
 - `isIntentAvailable` method for checking thirdparty apps availability
 - Demo application
 
 ### Future releases
-- write readme
 - add share intent
 - add send sms
-- add call
 - add send email
 - add show on map intent
 - app chooser dialog

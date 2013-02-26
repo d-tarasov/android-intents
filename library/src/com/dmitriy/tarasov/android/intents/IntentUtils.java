@@ -33,6 +33,37 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Calls the entered phone number. Valid telephone numbers as defined in the IETF RFC 3966 are accepted.
+     * Valid examples include the following:
+     * tel:2125551212
+     * tel: (212) 555 1212
+     *
+     * Note: This requires your application to request the following permission in your manifest:
+     * <code>&lt;uses-permission android:name="android.permission.CALL_PHONE"/&gt;</code>
+     *
+     * @param phoneNumber Phone number
+     */
+    public static Intent callPhone(String phoneNumber) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        return intent;
+    }
+
+    /**
+     * Dials (but does not actually initiate the call) the number given.
+     * Telephone number normalization described for {@link #callPhone(String)} applies to dial as well.
+     *
+     * @param phoneNumber Phone number
+     */
+    public static Intent dialPhone(String phoneNumber) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        return intent;
+    }
+
+    /**
      * Check that cropping application is available
      *
      * @param context Application context
