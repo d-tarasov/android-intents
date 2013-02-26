@@ -19,6 +19,7 @@
     <string name="app_name">Android Intents Collection</string>
 
     <string name="capture_photo">Capture Photo</string>
+    <string name="capture_photo_descr">call standard camera app for taking a shot</string>
     <string name="file_name">File name</string>
     <string name="default_file_name">CapturedPhoto.jpg</string>
     <string name="button_capture">Capture</string>
@@ -26,6 +27,7 @@
     <string name="cancelled">Cancelled</string>
 
     <string name="crop_image">Crop Image</string>
+    <string name="crop_image_descr">call gallery app to crop your image</string>
     <string name="crop">Crop</string>
     <string name="in_img">Input image</string>
     <string name="out_img">Output image</string>
@@ -42,13 +44,16 @@
     <string name="scale">Scale</string>
 
     <string name="call_phone">Call Phone</string>
+    <string name="call_phone_descr">call to phone using standard dialer</string>
     <string name="phone_number">Phone number</string>
     <string name="default_phone">8 927 777 77 77</string>
     <string name="call">Call</string>
 
     <string name="dial_phone">Dial Phone</string>
+    <string name="dial_phone_descr">opens standard dialer without starting a call</string>
 
     <string name="open_link">Open Link</string>
+    <string name="open_link_descr">opens a web page in standard browser</string>
     <string name="target_url">Target URL</string>
     <string name="default_url">http://github.com/d-tarasov/android-intents</string>
     <string name="open">Open</string>

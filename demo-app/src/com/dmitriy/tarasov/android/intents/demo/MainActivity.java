@@ -17,12 +17,15 @@
 package com.dmitriy.tarasov.android.intents.demo;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,37 +50,83 @@ public class MainActivity extends ListActivity {
 
     private List<ListItem> fillItems() {
         List<ListItem> items = new ArrayList<ListItem>();
-        items.add(new ListItem(R.string.capture_photo, new Intent(this, CapturePhotoActivity.class)));
-        items.add(new ListItem(R.string.crop_image, new Intent(this, CropImageActivity.class)));
-        items.add(new ListItem(R.string.call_phone, new Intent(this, CallPhoneActivity.class)));
-        items.add(new ListItem(R.string.dial_phone, new Intent(this, DialPhoneActivity.class)));
-        items.add(new ListItem(R.string.open_link, new Intent(this, OpenLinkActivity.class)));
+        addListItem(items, R.string.capture_photo, R.string.capture_photo_descr, CapturePhotoActivity.class);
+        addListItem(items, R.string.crop_image, R.string.crop_image_descr, CropImageActivity.class);
+        addListItem(items, R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);
+        addListItem(items, R.string.dial_phone, R.string.dial_phone_descr, DialPhoneActivity.class);
+        addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
         return items;
     }
 
+    private void addListItem(List<ListItem> list, int titleId, int descriptionId, Class<?> clazz) {
+        list.add(new ListItem(titleId, descriptionId, new Intent(this, clazz)));
+    }
+
     private void initViews(List<ListItem> listItems) {
-        // TODO two rows list item with description at second row
-        ListAdapter adapter = new ArrayAdapter<ListItem>(
-                this,
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                listItems);
+        ListAdapter adapter = new ItemsAdapter(this, listItems);
         setListAdapter(adapter);
+    }
+
+    private static class ItemsAdapter extends BaseAdapter {
+
+        private final Context context;
+        private final List<ListItem> items;
+
+        private ItemsAdapter(Context context, List<ListItem> items) {
+            this.context = context;
+            this.items = items;
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View rowView = convertView;
+            if (rowView == null) {
+                rowView = View.inflate(context, android.R.layout.simple_list_item_2, null);
+                ViewHolder holder = new ViewHolder();
+                holder.title = (TextView) rowView.findViewById(android.R.id.text1);
+                holder.description = (TextView) rowView.findViewById(android.R.id.text2);
+                rowView.setTag(holder);
+            }
+
+            ListItem item = (ListItem) getItem(position);
+            ViewHolder holder = (ViewHolder) rowView.getTag();
+            holder.title.setText(item.text);
+            holder.description.setText(item.description);
+            return rowView;
+        }
+
+        private static class ViewHolder {
+            TextView title;
+            TextView description;
+        }
     }
 
     private class ListItem {
 
-        private ListItem(int textId, Intent intent) {
+        private ListItem(int textId, int descriptionId, Intent intent) {
             this.text = getString(textId);
+            this.description = getString(descriptionId);
             this.intent = intent;
         }
 
         String text;
+        String description;
         Intent intent;
 
-        @Override
-        public String toString() {
-            return text;
-        }
     }
 }
