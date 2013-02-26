@@ -15,6 +15,7 @@ At this moment collection includes this intents
 
 - **Call Phone** - call to phone using standard dialer
 - **Dial Phone** - opens standard dialer without starting a call
+- **Open Link** - opens a web page in standard browser
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
@@ -44,6 +45,7 @@ At this moment collection includes this intents
 - Capture photo intent
 - Crop image intents
 - Dialer intents
+- Browser intents
 - `isIntentAvailable` method for checking thirdparty apps availability
 - Demo application
 

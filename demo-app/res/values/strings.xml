@@ -48,4 +48,9 @@
 
     <string name="dial_phone">Dial Phone</string>
 
+    <string name="open_link">Open Link</string>
+    <string name="target_url">Target URL</string>
+    <string name="default_url">http://github.com/d-tarasov/android-intents</string>
+    <string name="open">Open</string>
+
 </resources>

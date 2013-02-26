@@ -25,12 +25,32 @@ import android.net.Uri;
 import android.provider.MediaStore;
 
 import java.io.File;
+import java.net.URL;
 import java.util.List;
 
 /**
  * @author Dmitriy Tarasov
  */
 public class IntentUtils {
+
+    /**
+     * Open a browser window to the URL specified.
+     *
+     * @param url Target url
+     */
+    public static Intent openLink(String url) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        return intent;
+    }
+
+    /**
+     * @see #openLink(String)
+     */
+    public static Intent openLink(URL url) {
+        return openLink(url.toString());
+    }
 
     /**
      * Calls the entered phone number. Valid telephone numbers as defined in the IETF RFC 3966 are accepted.

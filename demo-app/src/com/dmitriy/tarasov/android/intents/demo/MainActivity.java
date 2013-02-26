@@ -51,6 +51,7 @@ public class MainActivity extends ListActivity {
         items.add(new ListItem(R.string.crop_image, new Intent(this, CropImageActivity.class)));
         items.add(new ListItem(R.string.call_phone, new Intent(this, CallPhoneActivity.class)));
         items.add(new ListItem(R.string.dial_phone, new Intent(this, DialPhoneActivity.class)));
+        items.add(new ListItem(R.string.open_link, new Intent(this, OpenLinkActivity.class)));
         return items;
     }
 

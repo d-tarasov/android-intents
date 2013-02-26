@@ -66,7 +66,7 @@ public class CropImageActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crop);
+        setContentView(R.layout.activity_crop_image);
 
         bmp = BitmapFactory.decodeResource(getResources(), R.raw.sample);
         try {
