@@ -15,6 +15,7 @@ At this moment collection includes this intents
 
 - **Show Location** - opens the Maps application to the given coordinates
 - **Find Location** - opens the Maps application to the given query
+- **Show Street View** - opens Street View app
 - **Call Phone** - call to phone using standard dialer
 - **Dial Phone** - opens standard dialer without starting a call
 - **Open Link** - opens a web page in standard browser
@@ -49,6 +50,7 @@ At this moment collection includes this intents
 - Dialer intents
 - Browser intents
 - Map intents
+- Street View intent
 - `isIntentAvailable` method for checking thirdparty apps availability
 - Demo application
 
@@ -60,7 +62,6 @@ At this moment collection includes this intents
 - show video intent
 - open market page
 - open settings to enable gps
-- http://developer.android.com/guide/appendix/g-app-intents.html
 - prepare demo and upload to play store
 - integration with zxing intent integrator
 

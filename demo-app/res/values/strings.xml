@@ -71,4 +71,12 @@
     <string name="query_string">Query string</string>
     <string name="find">Find</string>
 
+    <string name="show_street_view">Show Street View</string>
+    <string name="show_street_view_descr">opens Street View app</string>
+    <string name="street_view">Street View</string>
+    <string name="yaw">Yaw</string>
+    <string name="pitch">Pitch</string>
+    <string name="zoom">Zoom</string>
+    <string name="map_zoom">Map zoom</string>
+
 </resources>

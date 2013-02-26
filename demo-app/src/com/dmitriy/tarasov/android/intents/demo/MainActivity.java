@@ -57,6 +57,7 @@ public class MainActivity extends ListActivity {
         addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
         addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
         addListItem(items, R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
+        addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
         return items;
     }
 

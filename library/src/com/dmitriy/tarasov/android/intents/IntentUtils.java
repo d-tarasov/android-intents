@@ -34,6 +34,48 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Opens the Street View application to the given location.
+     * The URI scheme is based on the syntax used for Street View panorama information in Google Maps URLs.
+     *
+     * @param latitude  Latitude
+     * @param longitude Longitude
+     * @param yaw       Panorama center-of-view in degrees clockwise from North.
+     *                  <p/>
+     *                  Note: The two commas after the yaw parameter are required.
+     *                  They are present for backwards-compatibility reasons.
+     * @param pitch     Panorama center-of-view in degrees from -90 (look straight up) to 90 (look straight down.)
+     * @param zoom      Panorama zoom. 1.0 = normal zoom, 2.0 = zoomed in 2x, 3.0 = zoomed in 4x, and so on.
+     *                  A zoom of 1.0 is 90 degree horizontal FOV for a nominal landscape mode 4 x 3 aspect ratio display Android
+     *                  phones in portrait mode will adjust the zoom so that the vertical FOV is approximately the same as the
+     *                  landscape vertical FOV. This means that the horizontal FOV of an Android phone in portrait mode is much
+     *                  narrower than in landscape mode. This is done to minimize the fisheye lens effect that would be present
+     *                  if a 90 degree horizontal FOV was used in portrait mode.
+     * @param mapZoom   The map zoom of the map location associated with this panorama.
+     *                  This value is passed on to the Maps activity when the Street View "Go to Maps" menu item is chosen.
+     *                  It corresponds to the zoomLevel parameter in {@link #showLocation(float, float, Integer)}
+     */
+    public static Intent showStreetView(float latitude,
+                                        float longitude,
+                                        Float yaw,
+                                        Integer pitch,
+                                        Float zoom,
+                                        Integer mapZoom) {
+        StringBuilder builder = new StringBuilder("google.streetview:cbll=").append(latitude).append(",").append(longitude);
+        if (yaw != null || pitch != null || zoom != null) {
+            String cbpParam = String.format("%s,,%s,%s", yaw == null ? "" : yaw, pitch == null ? "" : pitch, zoom == null ? "" : zoom);
+            builder.append("&cbp=1,").append(cbpParam);
+        }
+        if (mapZoom != null) {
+            builder.append("&mz=").append(mapZoom);
+        }
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(builder.toString()));
+        return intent;
+    }
+
+    /**
      * Opens the Maps application to the given location.
      *
      * @param latitude  Latitude
@@ -41,7 +83,7 @@ public class IntentUtils {
      * @param zoomLevel A zoom level of 1 shows the whole Earth, centered at the given lat,lng.
      *                  A zoom level of 2 shows a quarter of the Earth, and so on. The highest zoom level is 23.
      *                  A larger zoom level will be clamped to 23.
-     * @see #findLocation(String, Integer)
+     * @see #findLocation(String)
      */
     public static Intent showLocation(float latitude, float longitude, Integer zoomLevel) {
         Intent intent = new Intent();
@@ -57,7 +99,7 @@ public class IntentUtils {
     /**
      * Opens the Maps application to the given query.
      *
-     * @param query     Query string
+     * @param query Query string
      * @see #showLocation(float, float, Integer)
      */
     public static Intent findLocation(String query) {
