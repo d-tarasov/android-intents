@@ -64,6 +64,9 @@ At this moment collection includes this intents
 - open market page
 - open settings to enable gps
 - prepare demo and upload to play store
+- open image in gallery
+- pick contact
+- pick file
 - integration with zxing intent integrator
 
 License
