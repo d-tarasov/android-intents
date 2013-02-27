@@ -61,5 +61,7 @@
 
         <activity android:name=".SendEmailActivity"/>
 
+        <activity android:name=".OpenPlayStoreActivity"/>
+
     </application>
 </manifest> 

@@ -17,6 +17,7 @@ At this moment collection includes this intents
 - **Send SMS** - send SMS message using built-in app
 - **Send Email** - send email using appropriate app
 - **Show Location** - opens the Maps application to the given coordinates
+- **Open Play Store** - opens app page at Google Play store
 - **Find Location** - opens the Maps application to the given query
 - **Show Street View** - opens Street View app
 - **Call Phone** - call to phone using standard dialer
@@ -51,6 +52,7 @@ At this moment collection includes this intents
 - Share text intent
 - Send SMS intent
 - Send email intent
+- Play Store intent
 - Capture photo intent
 - Crop image intents
 - Dialer intents
@@ -62,13 +64,15 @@ At this moment collection includes this intents
 
 ### Future releases
 - show video intent
-- open market page
 - open settings to enable gps
 - prepare demo and upload to play store
 - open image in gallery
+- open text
 - pick contact
 - pick file
 - integration with zxing intent integrator
+- add icons to list items
+- properly react in demo app on situations when target app isn't available (app mustn't crash)
 
 License
 -----

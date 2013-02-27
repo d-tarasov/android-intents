@@ -97,4 +97,7 @@
     <string name="default_email_subject">Hello from android-intents</string>
     <string name="default_body">I\'ve just trying Android Intents library and they rocks!</string>
 
+    <string name="open_play_store">Open Play Store</string>
+    <string name="open_play_store_descr">opens app page at Google Play store</string>
+
 </resources>

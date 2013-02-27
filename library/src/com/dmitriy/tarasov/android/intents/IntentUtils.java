@@ -35,6 +35,16 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Open app page at Google Play
+     *
+     * @param context Application context
+     */
+    public static Intent openPlayStore(Context context) {
+        String appPackageName = context.getPackageName();
+        return new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
+    }
+
+    /**
      * Send email message
      *
      * @param to      Receiver email
