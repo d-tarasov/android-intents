@@ -13,6 +13,7 @@ available at [Play Store](http://my_demo_app).
 
 At this moment collection includes this intents
 
+- **Send SMS** - send SMS message using built-in app
 - **Show Location** - opens the Maps application to the given coordinates
 - **Find Location** - opens the Maps application to the given query
 - **Show Street View** - opens Street View app
@@ -45,6 +46,7 @@ At this moment collection includes this intents
 ## Release History
 
 ### V0.0.1 (?): First release
+- Send SMS intent
 - Capture photo intent
 - Crop image intents
 - Dialer intents
@@ -56,7 +58,6 @@ At this moment collection includes this intents
 
 ### Future releases
 - add share intent
-- add send sms
 - add send email
 - show video intent
 - open market page

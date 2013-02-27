@@ -55,5 +55,7 @@
 
         <activity android:name=".ShowStreetViewActivity"/>
 
+        <activity android:name=".SendSmsActivity"/>
+
     </application>
 </manifest> 

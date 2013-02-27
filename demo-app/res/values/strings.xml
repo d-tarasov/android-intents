@@ -79,4 +79,9 @@
     <string name="zoom">Zoom</string>
     <string name="map_zoom">Map zoom</string>
 
+    <string name="send_sms">Send SMS</string>
+    <string name="send_sms_descr">send SMS message using built-in app</string>
+    <string name="message">Message</string>
+    <string name="default_message">Hey, what\'s up?</string>
+
 </resources>

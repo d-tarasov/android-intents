@@ -34,6 +34,21 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Send SMS message using built-in app
+     *
+     * @param to      Receiver phone number
+     * @param message Text to send
+     */
+    public static Intent sendSms(String to, String message) {
+        Uri smsUri = Uri.parse("tel:" + to);
+        Intent intent = new Intent(Intent.ACTION_VIEW, smsUri);
+        intent.putExtra("address", to);
+        intent.putExtra("sms_body", message);
+        intent.setType("vnd.android-dir/mms-sms");
+        return intent;
+    }
+
+    /**
      * Opens the Street View application to the given location.
      * The URI scheme is based on the syntax used for Street View panorama information in Google Maps URLs.
      *
