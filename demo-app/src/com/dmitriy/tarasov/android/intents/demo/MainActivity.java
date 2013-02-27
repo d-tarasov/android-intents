@@ -52,6 +52,7 @@ public class MainActivity extends ListActivity {
         List<ListItem> items = new ArrayList<ListItem>();
         addListItem(items, R.string.share_text, R.string.share_text_descr, ShareTextActivity.class);
         addListItem(items, R.string.send_sms, R.string.send_sms_descr, SendSmsActivity.class);
+        addListItem(items, R.string.send_email, R.string.send_email_descr, SendEmailActivity.class);
         addListItem(items, R.string.capture_photo, R.string.capture_photo_descr, CapturePhotoActivity.class);
         addListItem(items, R.string.crop_image, R.string.crop_image_descr, CropImageActivity.class);
         addListItem(items, R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);

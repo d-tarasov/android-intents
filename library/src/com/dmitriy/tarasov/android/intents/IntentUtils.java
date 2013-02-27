@@ -35,6 +35,30 @@ import java.util.List;
 public class IntentUtils {
 
     /**
+     * Send email message
+     *
+     * @param to      Receiver email
+     * @param subject Message subject
+     * @param text    Message body
+     * @see #sendEmail(String[], String, String)
+     */
+    public static Intent sendEmail(String to, String subject, String text) {
+        return sendEmail(new String[]{to}, subject, text);
+    }
+
+    /**
+     * @see #sendEmail(String, String, String)
+     */
+    public static Intent sendEmail(String[] to, String subject, String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, to);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        return intent;
+    }
+
+    /**
      * Share text via thirdparty app like twitter, facebook, email, sms etc.
      *
      * @param subject Optional subject of the message

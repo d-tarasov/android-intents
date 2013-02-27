@@ -91,4 +91,10 @@
     <string name="text_to_share">Text to share</string>
     <string name="default_text">Hello everyone!</string>
 
+    <string name="send_email">Send Email</string>
+    <string name="send_email_descr">send email using appropriate app</string>
+    <string name="default_email">dm.vl.tarasov@gmail.com</string>
+    <string name="default_email_subject">Hello from android-intents</string>
+    <string name="default_body">I\'ve just trying Android Intents library and they rocks!</string>
+
 </resources>

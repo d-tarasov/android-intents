@@ -15,6 +15,7 @@ At this moment collection includes this intents
 
 - **Share Text** - share text via thirdparty app like twitter, facebook, email, sms etc.
 - **Send SMS** - send SMS message using built-in app
+- **Send Email** - send email using appropriate app
 - **Show Location** - opens the Maps application to the given coordinates
 - **Find Location** - opens the Maps application to the given query
 - **Show Street View** - opens Street View app
@@ -49,6 +50,7 @@ At this moment collection includes this intents
 ### V0.0.1 (?): First release
 - Share text intent
 - Send SMS intent
+- Send email intent
 - Capture photo intent
 - Crop image intents
 - Dialer intents
@@ -59,7 +61,6 @@ At this moment collection includes this intents
 - Demo application
 
 ### Future releases
-- add send email
 - show video intent
 - open market page
 - open settings to enable gps
