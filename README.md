@@ -13,6 +13,7 @@ available at [Play Store](http://my_demo_app).
 
 At this moment collection includes this intents
 
+- **Share Text** - share text via thirdparty app like twitter, facebook, email, sms etc.
 - **Send SMS** - send SMS message using built-in app
 - **Show Location** - opens the Maps application to the given coordinates
 - **Find Location** - opens the Maps application to the given query
@@ -46,6 +47,7 @@ At this moment collection includes this intents
 ## Release History
 
 ### V0.0.1 (?): First release
+- Share text intent
 - Send SMS intent
 - Capture photo intent
 - Crop image intents
@@ -57,7 +59,6 @@ At this moment collection includes this intents
 - Demo application
 
 ### Future releases
-- add share intent
 - add send email
 - show video intent
 - open market page

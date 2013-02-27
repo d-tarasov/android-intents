@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 
 import java.io.File;
 import java.net.URL;
@@ -32,6 +33,23 @@ import java.util.List;
  * @author Dmitriy Tarasov
  */
 public class IntentUtils {
+
+    /**
+     * Share text via thirdparty app like twitter, facebook, email, sms etc.
+     *
+     * @param subject Optional subject of the message
+     * @param text    Text to share
+     */
+    public static Intent shareText(String subject, String text) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        if (!TextUtils.isEmpty(subject)) {
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        }
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        intent.setType("text/plain");
+        return intent;
+    }
 
     /**
      * Send SMS message using built-in app

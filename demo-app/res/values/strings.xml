@@ -84,4 +84,11 @@
     <string name="message">Message</string>
     <string name="default_message">Hey, what\'s up?</string>
 
+    <string name="share_text">Share Text</string>
+    <string name="share_text_descr">share text via thirdparty app like twitter, facebook, email, sms etc.</string>
+    <string name="subject">Subject</string>
+    <string name="default_subject">Hey</string>
+    <string name="text_to_share">Text to share</string>
+    <string name="default_text">Hello everyone!</string>
+
 </resources>
