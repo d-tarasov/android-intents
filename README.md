@@ -6,8 +6,12 @@ A collection of well-known Android intents for most common actions.
 Helps you call thirdparty apps to do generic work instead of you. 
 You can call camera app for taking photos, share text, make calls, 
 send SMS messages, scan barcodes and QR-codes and more. See methods 
-and javadocs of `IntentUtils` class inside of library. Also demo app 
-available at [Play Store](http://my_demo_app).
+and javadocs of `IntentUtils` class inside of library.
+
+Also demo app available at ![Play Store][2](https://play.google.com/store/apps/details?id=com.dmitriy.tarasov.android.intents.demo)
+
+![QR][3](https://play.google.com/store/apps/details?id=com.dmitriy.tarasov.android.intents.demo)
+
 
 ## Intents Collection
 
@@ -42,13 +46,13 @@ At this moment collection includes this intents
 <dependency>
   <groupId>com.dmitriy.tarasov</groupId>
   <artifactId>android-intents</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
 ## Release History
 
-### V0.0.1 (?): First release
+### V1.0.0 (28/02/2013): First release
 - Share text intent
 - Send SMS intent
 - Send email intent
@@ -65,7 +69,6 @@ At this moment collection includes this intents
 ### Future releases
 - show video intent
 - open settings to enable gps
-- prepare demo and upload to play store
 - open image in gallery
 - open text
 - pick contact
@@ -82,3 +85,5 @@ License
 
 
 [1]: https://raw.github.com/d-tarasov/android-intents/master/logo.png
+[2]: https://raw.github.com/d-tarasov/android-intents/master/available_at_google_play.png
+[3]: https://raw.github.com/d-tarasov/android-intents/master/qr.png

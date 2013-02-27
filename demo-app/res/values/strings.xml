@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <string name="app_name">Android Intents Collection</string>
+    <string name="app_name">Android Intents Demo</string>
 
     <string name="capture_photo">Capture Photo</string>
     <string name="capture_photo_descr">call standard camera app for taking a shot</string>
