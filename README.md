@@ -8,9 +8,9 @@ You can call camera app for taking photos, share text, make calls,
 send SMS messages, scan barcodes and QR-codes and more. See methods 
 and javadocs of `IntentUtils` class inside of library.
 
-Also demo app available at ![Play Store][2](https://play.google.com/store/apps/details?id=com.dmitriy.tarasov.android.intents.demo)
+Also demo app available at [Google Play](https://play.google.com/store/apps/details?id=com.dmitriy.tarasov.android.intents.demo)
 
-![QR][3](https://play.google.com/store/apps/details?id=com.dmitriy.tarasov.android.intents.demo)
+![QR][2]
 
 
 ## Intents Collection
@@ -85,5 +85,4 @@ License
 
 
 [1]: https://raw.github.com/d-tarasov/android-intents/master/logo.png
-[2]: https://raw.github.com/d-tarasov/android-intents/master/available_at_google_play.png
-[3]: https://raw.github.com/d-tarasov/android-intents/master/qr.png
+[2]: https://raw.github.com/d-tarasov/android-intents/master/qr.png
