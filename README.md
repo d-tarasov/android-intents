@@ -58,7 +58,6 @@ At this moment collection includes this intents
 - add share intent
 - add send sms
 - add send email
-- app chooser dialog
 - show video intent
 - open market page
 - open settings to enable gps
