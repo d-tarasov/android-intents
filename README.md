@@ -52,6 +52,10 @@ At this moment collection includes this intents
 
 ## Release History
 
+### V1.0.1 (11/08/2013): Bugfixes
+- Fixed issue #1: attach sources and javadocs to release builds
+- Fixed issue #2: problem in IntentUtils#openLink with urls without protocol
+
 ### V1.0.0 (28/02/2013): First release
 - Share text intent
 - Send SMS intent
