@@ -46,7 +46,7 @@ At this moment collection includes this intents
 <dependency>
   <groupId>com.dmitriy.tarasov</groupId>
   <artifactId>android-intents</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
