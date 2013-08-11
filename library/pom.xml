@@ -22,7 +22,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dmitriy.tarasov</groupId>
     <artifactId>android-intents</artifactId>
     <packaging>jar</packaging>
     <name>library</name>
