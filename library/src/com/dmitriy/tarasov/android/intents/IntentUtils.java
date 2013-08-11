@@ -183,6 +183,11 @@ public class IntentUtils {
      * @param url Target url
      */
     public static Intent openLink(String url) {
+        // if protocol isn't defined use http by default
+        if (!TextUtils.isEmpty(url) && !url.contains("://")) {
+            url = "http://" + url;
+        }
+
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
