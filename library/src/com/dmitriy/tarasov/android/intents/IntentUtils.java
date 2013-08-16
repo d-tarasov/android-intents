@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Contacts;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 
 import java.io.File;
@@ -176,6 +177,15 @@ public class IntentUtils {
         intent.setAction(Intent.ACTION_VIEW);
         String data = String.format("geo:0,0?q=%s", query);
         intent.setData(Uri.parse(data));
+        return intent;
+    }
+
+    /**
+     * Open system settings location services screen for turning on/off GPS
+     */
+    public static Intent showLocationServices() {
+        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         return intent;
     }
 

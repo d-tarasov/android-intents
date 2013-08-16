@@ -33,6 +33,7 @@
     <string name="pick_file">Pick File</string>
     <string name="pick_contact">Pick Contact</string>
     <string name="show_location">Show Location</string>
+    <string name="show_location_services">Show Location Services</string>
     <string name="find_location">Find Location</string>
     <string name="show_street_view">Show Street View</string>
     <string name="send_sms">Send SMS</string>
@@ -52,6 +53,7 @@
     <string name="pick_file_descr">opens file manager to choose a file</string>
     <string name="pick_contact_descr">pick a contact from phone book</string>
     <string name="show_location_descr">opens the Maps application to the given coordinates</string>
+    <string name="show_location_services_descr">opens system settings location services screen</string>
     <string name="find_location_descr">opens the Maps application to the given query</string>
     <string name="show_street_view_descr">opens Street View app</string>
     <string name="send_sms_descr">send SMS message using built-in app</string>

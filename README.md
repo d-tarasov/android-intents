@@ -24,6 +24,7 @@ At this moment collection includes this intents
 - **Open Play Store** - opens app page at Google Play store
 - **Find Location** - opens the Maps application to the given query
 - **Show Street View** - opens Street View app
+- **Show Location Settings** - opens system settings location services screen
 - **Call Phone** - call to phone using standard dialer
 - **Dial Phone** - opens standard dialer without starting a call
 - **Open Link** - opens a web page in standard browser
@@ -65,6 +66,7 @@ At this moment collection includes this intents
 - Open text intent
 - Pick file intent
 - Pick contact intent
+- Show location settings intent
 
 ### v1.0.1 (11/08/2013): Bugfixes
 - Fixed issue #1: attach sources and javadocs to release builds
@@ -85,7 +87,6 @@ At this moment collection includes this intents
 - Demo application
 
 ### Future releases
-- open settings to enable gps
 - integration with zxing intent integrator
 - add icons to list items
 - properly react in demo app on situations when target app isn't available (app mustn't crash)

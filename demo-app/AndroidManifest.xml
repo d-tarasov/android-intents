@@ -64,11 +64,13 @@
 
         <activity android:name=".pick.PickContactActivity"/>
 
-        <activity android:name=".ShowLocationActivity"/>
+        <activity android:name=".show.ShowLocationActivity"/>
+
+        <activity android:name=".show.ShowLocationServicesActivity"/>
+
+        <activity android:name=".show.ShowStreetViewActivity"/>
 
         <activity android:name=".FindLocationActivity"/>
-
-        <activity android:name=".ShowStreetViewActivity"/>
 
         <activity android:name=".SendSmsActivity"/>
 

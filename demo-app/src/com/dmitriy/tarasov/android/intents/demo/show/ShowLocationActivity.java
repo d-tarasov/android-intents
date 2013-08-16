@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.show;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,7 +22,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov

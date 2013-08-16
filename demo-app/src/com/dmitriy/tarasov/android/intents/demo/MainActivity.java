@@ -35,6 +35,9 @@ import com.dmitriy.tarasov.android.intents.demo.open.OpenTextActivity;
 import com.dmitriy.tarasov.android.intents.demo.open.OpenVideoActivity;
 import com.dmitriy.tarasov.android.intents.demo.pick.PickContactActivity;
 import com.dmitriy.tarasov.android.intents.demo.pick.PickFileActivity;
+import com.dmitriy.tarasov.android.intents.demo.show.ShowLocationActivity;
+import com.dmitriy.tarasov.android.intents.demo.show.ShowLocationServicesActivity;
+import com.dmitriy.tarasov.android.intents.demo.show.ShowStreetViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +77,7 @@ public class MainActivity extends ListActivity {
         addListItem(items, R.string.open_text, R.string.open_text_descr, OpenTextActivity.class);
         addListItem(items, R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
         addListItem(items, R.string.pick_contact, R.string.pick_contact_descr, PickContactActivity.class);
+        addListItem(items, R.string.show_location_services, R.string.show_location_services_descr, ShowLocationServicesActivity.class);
         addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
         addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
         addListItem(items, R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
