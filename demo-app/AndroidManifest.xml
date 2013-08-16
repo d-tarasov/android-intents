@@ -23,6 +23,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <uses-sdk
         android:minSdkVersion="4"
@@ -60,6 +61,8 @@
         <activity android:name=".open.OpenTextActivity"/>
 
         <activity android:name=".pick.PickFileActivity"/>
+
+        <activity android:name=".pick.PickContactActivity"/>
 
         <activity android:name=".ShowLocationActivity"/>
 

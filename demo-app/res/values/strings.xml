@@ -31,6 +31,7 @@
     <string name="open_audio">Open Audio</string>
     <string name="open_play_store">Open Play Store</string>
     <string name="pick_file">Pick File</string>
+    <string name="pick_contact">Pick Contact</string>
     <string name="show_location">Show Location</string>
     <string name="find_location">Find Location</string>
     <string name="show_street_view">Show Street View</string>
@@ -49,6 +50,7 @@
     <string name="open_video_descr">opens a video file in appropriate app</string>
     <string name="open_audio_descr">opens an audio file in appropriate app</string>
     <string name="pick_file_descr">opens file manager to choose a file</string>
+    <string name="pick_contact_descr">pick a contact from phone book</string>
     <string name="show_location_descr">opens the Maps application to the given coordinates</string>
     <string name="find_location_descr">opens the Maps application to the given query</string>
     <string name="show_street_view_descr">opens Street View app</string>
@@ -105,5 +107,10 @@
     <string name="default_email">dm.vl.tarasov@gmail.com</string>
     <string name="default_email_subject">Hello from android-intents</string>
     <string name="default_body">I\'ve just trying Android Intents library and they rocks!</string>
+    <string name="eclair_required">Not supported on pre Eclair devices</string>
+    <string name="pick_all">Pick from all</string>
+    <string name="pick_with_phones">Pick with phones</string>
+    <string name="pick_with_emails">Pick with email</string>
+    <string name="pick_a_contact">Pick a contact</string>
 
 </resources>

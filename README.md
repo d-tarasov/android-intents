@@ -32,6 +32,7 @@ At this moment collection includes this intents
 - **Open Image** - opens an image file in appropriate app
 - **Open Text** - opens a text file in appropriate app
 - **Pick File** - opens file manager to choose a file
+- **Pick Contact** - pick a contact from phone book
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
@@ -63,6 +64,7 @@ At this moment collection includes this intents
 - Open image intent
 - Open text intent
 - Pick file intent
+- Pick contact intent
 
 ### v1.0.1 (11/08/2013): Bugfixes
 - Fixed issue #1: attach sources and javadocs to release builds
@@ -84,7 +86,6 @@ At this moment collection includes this intents
 
 ### Future releases
 - open settings to enable gps
-- pick contact
 - integration with zxing intent integrator
 - add icons to list items
 - properly react in demo app on situations when target app isn't available (app mustn't crash)

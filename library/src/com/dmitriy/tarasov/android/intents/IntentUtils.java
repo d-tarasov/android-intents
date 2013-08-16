@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
+import android.provider.Contacts;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 
@@ -325,6 +327,43 @@ public class IntentUtils {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + phoneNumber));
+        return intent;
+    }
+
+    /**
+     * Pick contact from phone book
+     */
+    public static Intent pickContact() {
+        return pickContact(null);
+    }
+
+    /**
+     * Pick contact from phone book
+     *
+     * @param scope You can restrict selection by passing required content type. Examples:
+     *              <p/>
+     *              <code><pre>
+     *              // Select only from users with emails
+     *              IntentUtils.pickContact(ContactsContract.CommonDataKinds.Email.CONTENT_TYPE);
+     *              <p/>
+     *              // Select only from users with phone numbers on pre Eclair devices
+     *              IntentUtils.pickContact(Contacts.Phones.CONTENT_TYPE);
+     *              <p/>
+     *              // Select only from users with phone numbers on devices with Eclair and higher
+     *              IntentUtils.pickContact(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
+     *              </pre></code>
+     */
+    public static Intent pickContact(String scope) {
+        Intent intent;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR) {
+            intent = new Intent(Intent.ACTION_PICK, Contacts.People.CONTENT_URI);
+        } else {
+            intent = new Intent(Intent.ACTION_PICK, Uri.parse("content://com.android.contacts/contacts"));
+        }
+
+        if (!TextUtils.isEmpty(scope)) {
+            intent.setType(scope);
+        }
         return intent;
     }
 
