@@ -27,6 +27,12 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.dmitriy.tarasov.android.intents.demo.open.OpenAudioActivity;
+import com.dmitriy.tarasov.android.intents.demo.open.OpenLinkActivity;
+import com.dmitriy.tarasov.android.intents.demo.open.OpenPlayStoreActivity;
+import com.dmitriy.tarasov.android.intents.demo.open.OpenVideoActivity;
+import com.dmitriy.tarasov.android.intents.demo.pick.PickFileActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,15 +59,18 @@ public class MainActivity extends ListActivity {
         addListItem(items, R.string.share_text, R.string.share_text_descr, ShareTextActivity.class);
         addListItem(items, R.string.send_sms, R.string.send_sms_descr, SendSmsActivity.class);
         addListItem(items, R.string.send_email, R.string.send_email_descr, SendEmailActivity.class);
-        addListItem(items, R.string.open_play_store, R.string.open_play_store_descr, OpenPlayStoreActivity.class);
         addListItem(items, R.string.capture_photo, R.string.capture_photo_descr, CapturePhotoActivity.class);
         addListItem(items, R.string.crop_image, R.string.crop_image_descr, CropImageActivity.class);
         addListItem(items, R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);
         addListItem(items, R.string.dial_phone, R.string.dial_phone_descr, DialPhoneActivity.class);
+        addListItem(items, R.string.open_play_store, R.string.open_play_store_descr, OpenPlayStoreActivity.class);
         addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
+        addListItem(items, R.string.open_audio, R.string.open_audio_descr, OpenAudioActivity.class);
+        addListItem(items, R.string.open_video, R.string.open_video_descr, OpenVideoActivity.class);
+        addListItem(items, R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
+        addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
         addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
         addListItem(items, R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
-        addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
         return items;
     }
 

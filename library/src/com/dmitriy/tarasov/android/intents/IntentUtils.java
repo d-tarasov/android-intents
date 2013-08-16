@@ -202,6 +202,69 @@ public class IntentUtils {
     }
 
     /**
+     * Open a video file in appropriate app
+     *
+     * @param file File to open
+     */
+    public static Intent openVideo(File file) {
+        return openVideo(Uri.fromFile(file));
+    }
+
+    /**
+     * @see #openVideo(java.io.File)
+     */
+    public static Intent openVideo(String file) {
+        return openVideo(new File(file));
+    }
+
+    /**
+     * @see #openVideo(java.io.File)
+     */
+    public static Intent openVideo(Uri uri) {
+        return openMedia(uri, "video/*");
+    }
+
+    /**
+     * Open an audio file in appropriate app
+     *
+     * @param file File to open
+     */
+    public static Intent openAudio(File file) {
+        return openAudio(Uri.fromFile(file));
+    }
+
+    /**
+     * @see #openAudio(java.io.File)
+     */
+    public static Intent openAudio(String file) {
+        return openAudio(new File(file));
+    }
+
+    /**
+     * @see #openAudio(java.io.File)
+     */
+    public static Intent openAudio(Uri uri) {
+        return openMedia(uri, "audio/*");
+    }
+
+    /**
+     * Pick file from sdcard with file manager. Chosen file can be obtained from Intent in onActivityResult.
+     * See code below for example:
+     * <p/>
+     * <pre><code>
+     *     @Override
+     *     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+     *         Uri file = data.getData();
+     *     }
+     * </code></pre>
+     */
+    public static Intent pickFile() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("file/*");
+        return intent;
+    }
+
+    /**
      * Calls the entered phone number. Valid telephone numbers as defined in the IETF RFC 3966 are accepted.
      * Valid examples include the following:
      * tel:2125551212
@@ -302,5 +365,11 @@ public class IntentUtils {
         PackageManager packageManager = context.getPackageManager();
         List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
         return list.size() > 0;
+    }
+
+    private static Intent openMedia(Uri uri, String mimeType) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, mimeType);
+        return intent;
     }
 }

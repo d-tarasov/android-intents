@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ Copyright 2013 Dmitriy Tarasov
   ~
@@ -15,10 +16,11 @@
   ~ limitations under the License.
   -->
 
-<resources>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <style name="DemoApp.Theme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <include layout="@layout/inc_path"/>
 
-    </style>
-
-</resources>
+</RelativeLayout>

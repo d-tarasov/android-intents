@@ -27,6 +27,9 @@ At this moment collection includes this intents
 - **Call Phone** - call to phone using standard dialer
 - **Dial Phone** - opens standard dialer without starting a call
 - **Open Link** - opens a web page in standard browser
+- **Open Audio** - opens an audio file in appropriate app
+- **Open Video** - opens a video file in appropriate app
+- **Pick File** - opens file manager to choose a file
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
@@ -52,11 +55,16 @@ At this moment collection includes this intents
 
 ## Release History
 
-### V1.0.1 (11/08/2013): Bugfixes
+### v1.1.0 (?/?/2013): New features
+- Open audio intent
+- Open video intent
+- Pick file intent
+
+### v1.0.1 (11/08/2013): Bugfixes
 - Fixed issue #1: attach sources and javadocs to release builds
 - Fixed issue #2: problem in IntentUtils#openLink with urls without protocol
 
-### V1.0.0 (28/02/2013): First release
+### v1.0.0 (28/02/2013): First release
 - Share text intent
 - Send SMS intent
 - Send email intent
@@ -71,15 +79,17 @@ At this moment collection includes this intents
 - Demo application
 
 ### Future releases
-- show video intent
 - open settings to enable gps
 - open image in gallery
 - open text
 - pick contact
-- pick file
 - integration with zxing intent integrator
 - add icons to list items
 - properly react in demo app on situations when target app isn't available (app mustn't crash)
+- dimensions in demo by guidelines
+- activity titles
+- up navigation
+- about dialog
 
 License
 -----

@@ -14,32 +14,48 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.pick;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class OpenLinkActivity extends Activity {
+public class PickFileActivity extends Activity {
 
-    private EditText targetLink;
+    private static final int PICK_FILE = 0;
+
+    protected EditText pathView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_open_link);
+        setContentView(R.layout.activity_pick_file);
 
-        targetLink = (EditText) findViewById(R.id.link);
+        pathView = (EditText) findViewById(R.id.path);
     }
 
-    public void openClick(View view) {
-        Intent intent = IntentUtils.openLink(targetLink.getText().toString());
-        startActivity(intent);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_FILE && resultCode == RESULT_OK) {
+            Uri file = data.getData();
+            String path = file.getPath();
+
+            pathView.setText(path);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void pickFileClick(View view) {
+        Intent pick = IntentUtils.pickFile();
+        startActivityForResult(pick, PICK_FILE);
     }
 }

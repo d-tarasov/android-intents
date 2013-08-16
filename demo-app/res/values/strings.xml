@@ -58,6 +58,15 @@
     <string name="default_url">http://github.com/d-tarasov/android-intents</string>
     <string name="open">Open</string>
 
+    <string name="pick_file_dots">…</string>
+    <string name="open_video">Open Video</string>
+    <string name="open_video_descr">opens a video file in appropriate app</string>
+    <string name="open_audio">Open Audio</string>
+    <string name="open_audio_descr">opens an audio file in appropriate app</string>
+
+    <string name="pick_file">Pick File</string>
+    <string name="pick_file_descr">opens file manager to choose a file</string>
+
     <string name="show_location">Show Location</string>
     <string name="show_location_descr">opens the Maps application to the given coordinates</string>
     <string name="latitude">Latitude</string>
