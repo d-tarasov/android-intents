@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.other;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,12 +22,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class DialPhoneActivity extends Activity {
+public class CallPhoneActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class DialPhoneActivity extends Activity {
             @Override
             public void onClick(View v) {
                 EditText phone = (EditText) findViewById(R.id.phone);
-                Intent callPhone = IntentUtils.dialPhone(phone.getText().toString());
+                Intent callPhone = IntentUtils.callPhone(phone.getText().toString());
                 startActivity(callPhone);
             }
         });

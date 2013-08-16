@@ -42,43 +42,81 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CapturePhotoActivity"/>
+        <activity
+            android:name=".open.OpenLinkActivity"
+            android:label="@string/open_link"/>
 
-        <activity android:name=".CropImageActivity"/>
+        <activity
+            android:name=".open.OpenAudioActivity"
+            android:label="@string/open_audio"/>
 
-        <activity android:name=".CallPhoneActivity"/>
+        <activity
+            android:name=".open.OpenVideoActivity"
+            android:label="@string/open_video"/>
 
-        <activity android:name=".DialPhoneActivity"/>
+        <activity
+            android:name=".open.OpenImageActivity"
+            android:label="@string/open_image"/>
 
-        <activity android:name=".open.OpenLinkActivity"/>
+        <activity
+            android:name=".open.OpenTextActivity"
+            android:label="@string/open_text"/>
 
-        <activity android:name=".open.OpenAudioActivity"/>
+        <activity
+            android:name=".open.OpenPlayStoreActivity"
+            android:label="@string/open_play_store"/>
 
-        <activity android:name=".open.OpenVideoActivity"/>
+        <activity
+            android:name=".pick.PickFileActivity"
+            android:label="@string/pick_file"/>
 
-        <activity android:name=".open.OpenImageActivity"/>
+        <activity
+            android:name=".pick.PickContactActivity"
+            android:label="@string/pick_contact"/>
 
-        <activity android:name=".open.OpenTextActivity"/>
+        <activity
+            android:name=".show.ShowLocationActivity"
+            android:label="@string/show_location"/>
 
-        <activity android:name=".pick.PickFileActivity"/>
+        <activity
+            android:name=".show.ShowLocationServicesActivity"
+            android:label="@string/show_location_services"/>
 
-        <activity android:name=".pick.PickContactActivity"/>
+        <activity
+            android:name=".show.ShowStreetViewActivity"
+            android:label="@string/show_street_view"/>
 
-        <activity android:name=".show.ShowLocationActivity"/>
+        <activity
+            android:name=".send.SendSmsActivity"
+            android:label="@string/send_sms"/>
 
-        <activity android:name=".show.ShowLocationServicesActivity"/>
+        <activity
+            android:name=".send.SendEmailActivity"
+            android:label="@string/send_email"/>
 
-        <activity android:name=".show.ShowStreetViewActivity"/>
+        <activity
+            android:name=".other.FindLocationActivity"
+            android:label="@string/find_location"/>
 
-        <activity android:name=".FindLocationActivity"/>
+        <activity
+            android:name=".other.ShareTextActivity"
+            android:label="@string/share_text"/>
 
-        <activity android:name=".SendSmsActivity"/>
+        <activity
+            android:name=".other.CapturePhotoActivity"
+            android:label="@string/capture_photo"/>
 
-        <activity android:name=".ShareTextActivity"/>
+        <activity
+            android:name=".other.CropImageActivity"
+            android:label="@string/crop_image"/>
 
-        <activity android:name=".SendEmailActivity"/>
+        <activity
+            android:name=".other.CallPhoneActivity"
+            android:label="@string/call_phone"/>
 
-        <activity android:name=".open.OpenPlayStoreActivity"/>
+        <activity
+            android:name=".other.DialPhoneActivity"
+            android:label="@string/dial_phone"/>
 
     </application>
 </manifest> 

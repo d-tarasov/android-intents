@@ -14,32 +14,36 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.other;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class FindLocationActivity extends Activity {
-
-    private EditText query;
+public class DialPhoneActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_location);
+        setContentView(R.layout.activity_phone);
 
-        query = (EditText) findViewById(R.id.query);
-    }
-
-    public void findClick(View view) {
-        Intent intent = IntentUtils.findLocation(query.getText().toString());
-        startActivity(intent);
+        Button call = (Button) findViewById(R.id.call);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText phone = (EditText) findViewById(R.id.phone);
+                Intent callPhone = IntentUtils.dialPhone(phone.getText().toString());
+                startActivity(callPhone);
+            }
+        });
     }
 }

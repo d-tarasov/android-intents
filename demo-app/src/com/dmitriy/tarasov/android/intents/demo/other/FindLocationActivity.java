@@ -14,34 +14,34 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.other;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class SendSmsActivity extends Activity {
+public class FindLocationActivity extends Activity {
 
-    private EditText phone;
-    private EditText message;
+    private EditText query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_send_sms);
+        setContentView(R.layout.activity_find_location);
 
-        phone = (EditText) findViewById(R.id.phone);
-        message = (EditText) findViewById(R.id.message);
+        query = (EditText) findViewById(R.id.query);
     }
 
-    public void sendSmsClick(View view) {
-        Intent intent = IntentUtils.sendSms(phone.getText().toString(), message.getText().toString());
+    public void findClick(View view) {
+        Intent intent = IntentUtils.findLocation(query.getText().toString());
         startActivity(intent);
     }
 }

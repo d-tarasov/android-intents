@@ -14,34 +14,38 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.send;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class CallPhoneActivity extends Activity {
+public class SendEmailActivity extends Activity {
+
+    private EditText to;
+    private EditText subject;
+    private EditText body;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phone);
+        setContentView(R.layout.activity_send_email);
 
-        Button call = (Button) findViewById(R.id.call);
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText phone = (EditText) findViewById(R.id.phone);
-                Intent callPhone = IntentUtils.callPhone(phone.getText().toString());
-                startActivity(callPhone);
-            }
-        });
+        to = (EditText) findViewById(R.id.to);
+        subject = (EditText) findViewById(R.id.subject);
+        body = (EditText) findViewById(R.id.body);
+    }
+
+    public void sendEmailClick(View view) {
+        Intent intent = IntentUtils.sendEmail(to.getText().toString(), subject.getText().toString(), body.getText().toString());
+        startActivity(Intent.createChooser(intent, "TEST"));
     }
 }

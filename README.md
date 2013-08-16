@@ -67,6 +67,7 @@ At this moment collection includes this intents
 - Pick file intent
 - Pick contact intent
 - Show location settings intent
+- Demo app improvements
 
 ### v1.0.1 (11/08/2013): Bugfixes
 - Fixed issue #1: attach sources and javadocs to release builds
@@ -91,7 +92,6 @@ At this moment collection includes this intents
 - add icons to list items
 - properly react in demo app on situations when target app isn't available (app mustn't crash)
 - dimensions in demo by guidelines
-- activity titles
 - up navigation
 - about dialog
 - expandable list view

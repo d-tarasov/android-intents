@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo;
+package com.dmitriy.tarasov.android.intents.demo.send;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class SendEmailActivity extends Activity {
+public class SendSmsActivity extends Activity {
 
-    private EditText to;
-    private EditText subject;
-    private EditText body;
+    private EditText phone;
+    private EditText message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_send_email);
+        setContentView(R.layout.activity_send_sms);
 
-        to = (EditText) findViewById(R.id.to);
-        subject = (EditText) findViewById(R.id.subject);
-        body = (EditText) findViewById(R.id.body);
+        phone = (EditText) findViewById(R.id.phone);
+        message = (EditText) findViewById(R.id.message);
     }
 
-    public void sendEmailClick(View view) {
-        Intent intent = IntentUtils.sendEmail(to.getText().toString(), subject.getText().toString(), body.getText().toString());
-        startActivity(Intent.createChooser(intent, "TEST"));
+    public void sendSmsClick(View view) {
+        Intent intent = IntentUtils.sendSms(phone.getText().toString(), message.getText().toString());
+        startActivity(intent);
     }
 }
