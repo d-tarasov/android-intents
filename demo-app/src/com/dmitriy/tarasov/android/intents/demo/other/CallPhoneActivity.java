@@ -16,7 +16,6 @@
 
 package com.dmitriy.tarasov.android.intents.demo.other;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,12 +23,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class CallPhoneActivity extends Activity {
+public class CallPhoneActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

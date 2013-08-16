@@ -16,7 +16,6 @@
 
 package com.dmitriy.tarasov.android.intents.demo.show;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,12 +23,13 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class ShowStreetViewActivity extends Activity {
+public class ShowStreetViewActivity extends BaseActivity {
 
     private static final float DEFAULT_LAT = 55.830981f;
     private static final float DEFAULT_LONG = 37.505016f;

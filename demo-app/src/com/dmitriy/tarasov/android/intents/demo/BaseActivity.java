@@ -14,34 +14,35 @@
  * limitations under the License.
  */
 
-package com.dmitriy.tarasov.android.intents.demo.other;
+package com.dmitriy.tarasov.android.intents.demo;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-
-import com.dmitriy.tarasov.android.intents.IntentUtils;
-import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
-import com.dmitriy.tarasov.android.intents.demo.R;
+import android.view.MenuItem;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class FindLocationActivity extends BaseActivity {
-
-    private EditText query;
+public class BaseActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_location);
-
-        query = (EditText) findViewById(R.id.query);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
-    public void findClick(View view) {
-        Intent intent = IntentUtils.findLocation(query.getText().toString());
-        startActivity(intent);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

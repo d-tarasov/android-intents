@@ -16,19 +16,19 @@
 
 package com.dmitriy.tarasov.android.intents.demo.send;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class SendEmailActivity extends Activity {
+public class SendEmailActivity extends BaseActivity {
 
     private EditText to;
     private EditText subject;

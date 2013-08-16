@@ -92,7 +92,6 @@ At this moment collection includes this intents
 - add icons to list items
 - properly react in demo app on situations when target app isn't available (app mustn't crash)
 - dimensions in demo by guidelines
-- up navigation
 - about dialog
 - expandable list view
 

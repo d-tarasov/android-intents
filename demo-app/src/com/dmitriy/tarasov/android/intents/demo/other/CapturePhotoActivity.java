@@ -16,7 +16,6 @@
 
 package com.dmitriy.tarasov.android.intents.demo.other;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,12 +27,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class CapturePhotoActivity extends Activity {
+public class CapturePhotoActivity extends BaseActivity {
 
     private static final int PHOTO_REQUEST_CODE = 0;
 

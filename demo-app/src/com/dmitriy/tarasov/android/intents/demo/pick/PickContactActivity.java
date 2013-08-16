@@ -16,7 +16,6 @@
 
 package com.dmitriy.tarasov.android.intents.demo.pick;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -29,12 +28,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class PickContactActivity extends Activity {
+public class PickContactActivity extends BaseActivity {
 
     private static final int PICK_REQ = 0;
 

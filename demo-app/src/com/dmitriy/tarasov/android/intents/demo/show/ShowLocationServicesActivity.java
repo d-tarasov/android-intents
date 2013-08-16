@@ -16,18 +16,18 @@
 
 package com.dmitriy.tarasov.android.intents.demo.show;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public class ShowLocationServicesActivity extends Activity {
+public class ShowLocationServicesActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

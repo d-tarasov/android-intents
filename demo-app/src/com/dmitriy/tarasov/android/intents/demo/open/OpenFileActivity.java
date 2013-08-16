@@ -16,7 +16,6 @@
 
 package com.dmitriy.tarasov.android.intents.demo.open;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,12 +23,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
+import com.dmitriy.tarasov.android.intents.demo.BaseActivity;
 import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public abstract class OpenFileActivity extends Activity {
+public abstract class OpenFileActivity extends BaseActivity {
 
     protected static final int PICK_FILE = 0;
 
