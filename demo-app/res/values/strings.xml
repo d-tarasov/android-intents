@@ -16,18 +16,53 @@
   -->
 
 <resources>
+
     <string name="app_name">Android Intents Demo</string>
 
+    <!-- Intents -->
     <string name="capture_photo">Capture Photo</string>
+    <string name="crop_image">Crop Image</string>
+    <string name="call_phone">Call Phone</string>
+    <string name="dial_phone">Dial Phone</string>
+    <string name="open_link">Open Link</string>
+    <string name="open_image">Open Image</string>
+    <string name="open_text">Open Text</string>
+    <string name="open_video">Open Video</string>
+    <string name="open_audio">Open Audio</string>
+    <string name="open_play_store">Open Play Store</string>
+    <string name="pick_file">Pick File</string>
+    <string name="show_location">Show Location</string>
+    <string name="find_location">Find Location</string>
+    <string name="show_street_view">Show Street View</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="share_text">Share Text</string>
+    <string name="send_email">Send Email</string>
+
+    <!-- Descriptions -->
     <string name="capture_photo_descr">call standard camera app for taking a shot</string>
-    <string name="file_name">File name</string>
-    <string name="default_file_name">CapturedPhoto.jpg</string>
+    <string name="crop_image_descr">call gallery app to crop your image</string>
+    <string name="call_phone_descr">call to phone using standard dialer</string>
+    <string name="dial_phone_descr">opens standard dialer without starting a call</string>
+    <string name="open_link_descr">opens a web page in standard browser</string>
+    <string name="open_image_descr">opens an image file in appropriate app</string>
+    <string name="open_text_descr">opens a text file in appropriate app</string>
+    <string name="open_video_descr">opens a video file in appropriate app</string>
+    <string name="open_audio_descr">opens an audio file in appropriate app</string>
+    <string name="pick_file_descr">opens file manager to choose a file</string>
+    <string name="show_location_descr">opens the Maps application to the given coordinates</string>
+    <string name="find_location_descr">opens the Maps application to the given query</string>
+    <string name="show_street_view_descr">opens Street View app</string>
+    <string name="send_sms_descr">send SMS message using built-in app</string>
+    <string name="share_text_descr">share text via thirdparty app like twitter, facebook, email, sms etc.</string>
+    <string name="send_email_descr">send email using appropriate app</string>
+    <string name="open_play_store_descr">opens app page at Google Play store</string>
+
+    <!-- Controls -->
     <string name="button_capture">Capture</string>
     <string name="captured">Captured</string>
     <string name="cancelled">Cancelled</string>
-
-    <string name="crop_image">Crop Image</string>
-    <string name="crop_image_descr">call gallery app to crop your image</string>
+    <string name="file_name">File name</string>
+    <string name="default_file_name">CapturedPhoto.jpg</string>
     <string name="crop">Crop</string>
     <string name="in_img">Input image</string>
     <string name="out_img">Output image</string>
@@ -42,71 +77,33 @@
     <string name="aspect_x_title">Aspect X</string>
     <string name="aspect_y_title">Aspect Y</string>
     <string name="scale">Scale</string>
-
-    <string name="call_phone">Call Phone</string>
-    <string name="call_phone_descr">call to phone using standard dialer</string>
     <string name="phone_number">Phone number</string>
     <string name="default_phone">8 927 777 77 77</string>
     <string name="call">Call</string>
-
-    <string name="dial_phone">Dial Phone</string>
-    <string name="dial_phone_descr">opens standard dialer without starting a call</string>
-
-    <string name="open_link">Open Link</string>
-    <string name="open_link_descr">opens a web page in standard browser</string>
     <string name="target_url">Target URL</string>
     <string name="default_url">http://github.com/d-tarasov/android-intents</string>
     <string name="open">Open</string>
-
     <string name="pick_file_dots">…</string>
-    <string name="open_video">Open Video</string>
-    <string name="open_video_descr">opens a video file in appropriate app</string>
-    <string name="open_audio">Open Audio</string>
-    <string name="open_audio_descr">opens an audio file in appropriate app</string>
-
-    <string name="pick_file">Pick File</string>
-    <string name="pick_file_descr">opens file manager to choose a file</string>
-
-    <string name="show_location">Show Location</string>
-    <string name="show_location_descr">opens the Maps application to the given coordinates</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="zoom_level">Zoom level</string>
     <string name="show">Show</string>
-
-    <string name="find_location">Find Location</string>
-    <string name="find_location_descr">opens the Maps application to the given query</string>
     <string name="default_query">Samara, ulitsa Sanfirovoy</string>
     <string name="query_string">Query string</string>
     <string name="find">Find</string>
-
-    <string name="show_street_view">Show Street View</string>
-    <string name="show_street_view_descr">opens Street View app</string>
     <string name="street_view">Street View</string>
     <string name="yaw">Yaw</string>
     <string name="pitch">Pitch</string>
     <string name="zoom">Zoom</string>
     <string name="map_zoom">Map zoom</string>
-
-    <string name="send_sms">Send SMS</string>
-    <string name="send_sms_descr">send SMS message using built-in app</string>
     <string name="message">Message</string>
     <string name="default_message">Hey, what\'s up?</string>
-
-    <string name="share_text">Share Text</string>
-    <string name="share_text_descr">share text via thirdparty app like twitter, facebook, email, sms etc.</string>
     <string name="subject">Subject</string>
     <string name="default_subject">Hey</string>
     <string name="text_to_share">Text to share</string>
     <string name="default_text">Hello everyone!</string>
-
-    <string name="send_email">Send Email</string>
-    <string name="send_email_descr">send email using appropriate app</string>
     <string name="default_email">dm.vl.tarasov@gmail.com</string>
     <string name="default_email_subject">Hello from android-intents</string>
     <string name="default_body">I\'ve just trying Android Intents library and they rocks!</string>
-
-    <string name="open_play_store">Open Play Store</string>
-    <string name="open_play_store_descr">opens app page at Google Play store</string>
 
 </resources>

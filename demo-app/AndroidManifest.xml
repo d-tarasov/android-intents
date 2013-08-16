@@ -55,6 +55,10 @@
 
         <activity android:name=".open.OpenVideoActivity"/>
 
+        <activity android:name=".open.OpenImageActivity"/>
+
+        <activity android:name=".open.OpenTextActivity"/>
+
         <activity android:name=".pick.PickFileActivity"/>
 
         <activity android:name=".ShowLocationActivity"/>

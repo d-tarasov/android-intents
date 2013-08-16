@@ -28,8 +28,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dmitriy.tarasov.android.intents.demo.open.OpenAudioActivity;
+import com.dmitriy.tarasov.android.intents.demo.open.OpenImageActivity;
 import com.dmitriy.tarasov.android.intents.demo.open.OpenLinkActivity;
 import com.dmitriy.tarasov.android.intents.demo.open.OpenPlayStoreActivity;
+import com.dmitriy.tarasov.android.intents.demo.open.OpenTextActivity;
 import com.dmitriy.tarasov.android.intents.demo.open.OpenVideoActivity;
 import com.dmitriy.tarasov.android.intents.demo.pick.PickFileActivity;
 
@@ -67,6 +69,8 @@ public class MainActivity extends ListActivity {
         addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
         addListItem(items, R.string.open_audio, R.string.open_audio_descr, OpenAudioActivity.class);
         addListItem(items, R.string.open_video, R.string.open_video_descr, OpenVideoActivity.class);
+        addListItem(items, R.string.open_image, R.string.open_image_descr, OpenImageActivity.class);
+        addListItem(items, R.string.open_text, R.string.open_text_descr, OpenTextActivity.class);
         addListItem(items, R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
         addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
         addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);

@@ -248,6 +248,52 @@ public class IntentUtils {
     }
 
     /**
+     * Open an image file in appropriate app
+     *
+     * @param file File to open
+     */
+    public static Intent openImage(String file) {
+        return openImage(new File(file));
+    }
+
+    /**
+     * @see #openImage(String)
+     */
+    public static Intent openImage(File file) {
+        return openImage(Uri.fromFile(file));
+    }
+
+    /**
+     * @see #openImage(String)
+     */
+    public static Intent openImage(Uri uri) {
+        return openMedia(uri, "image/*");
+    }
+
+    /**
+     * Open a text file in appropriate app
+     *
+     * @param file File to open
+     */
+    public static Intent openText(String file) {
+        return openText(new File(file));
+    }
+
+    /**
+     * @see #openText(String)
+     */
+    public static Intent openText(File file) {
+        return openText(Uri.fromFile(file));
+    }
+
+    /**
+     * @see #openText(String)
+     */
+    public static Intent openText(Uri uri) {
+        return openMedia(uri, "text/plain");
+    }
+
+    /**
      * Pick file from sdcard with file manager. Chosen file can be obtained from Intent in onActivityResult.
      * See code below for example:
      * <p/>
@@ -321,7 +367,7 @@ public class IntentUtils {
      * @param aspectY Crop frame aspect Y
      * @param scale   Scale or not cropped image if output image and cropImage frame sizes differs
      * @return Intent with <code>data</code>-extra in <code>onActivityResult</code> which contains result as a
-     *         {@link android.graphics.Bitmap}. See demo app for details
+     * {@link android.graphics.Bitmap}. See demo app for details
      */
     public static Intent cropImage(Context context, File image, int outputX, int outputY, int aspectX, int aspectY, boolean scale) {
         Intent intent = new Intent("com.android.camera.action.CROP");

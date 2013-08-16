@@ -29,6 +29,8 @@ At this moment collection includes this intents
 - **Open Link** - opens a web page in standard browser
 - **Open Audio** - opens an audio file in appropriate app
 - **Open Video** - opens a video file in appropriate app
+- **Open Image** - opens an image file in appropriate app
+- **Open Text** - opens a text file in appropriate app
 - **Pick File** - opens file manager to choose a file
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
@@ -58,6 +60,8 @@ At this moment collection includes this intents
 ### v1.1.0 (?/?/2013): New features
 - Open audio intent
 - Open video intent
+- Open image intent
+- Open text intent
 - Pick file intent
 
 ### v1.0.1 (11/08/2013): Bugfixes
@@ -80,8 +84,6 @@ At this moment collection includes this intents
 
 ### Future releases
 - open settings to enable gps
-- open image in gallery
-- open text
 - pick contact
 - integration with zxing intent integrator
 - add icons to list items
@@ -90,6 +92,7 @@ At this moment collection includes this intents
 - activity titles
 - up navigation
 - about dialog
+- expandable list view
 
 License
 -----

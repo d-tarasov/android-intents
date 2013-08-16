@@ -16,52 +16,42 @@
 
 package com.dmitriy.tarasov.android.intents.demo.open;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+import android.provider.MediaStore;
 
 import com.dmitriy.tarasov.android.intents.IntentUtils;
-import com.dmitriy.tarasov.android.intents.demo.R;
 
 /**
  * @author Dmitriy Tarasov
  */
-public abstract class OpenFileActivity extends Activity {
-
-    protected static final int PICK_FILE = 0;
-
-    protected EditText pathView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_open_file);
-
-        pathView = (EditText) findViewById(R.id.path);
-    }
+public class OpenImageActivity extends OpenFileActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PICK_FILE && resultCode == RESULT_OK) {
             Uri file = data.getData();
-            String path = file.getPath();
+            String path = convertMediaUriToPath(file);
 
             pathView.setText(path);
+            return;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void pickFileClick(View view) {
-        Intent pick = IntentUtils.pickFile();
-        startActivityForResult(pick, PICK_FILE);
+    @Override
+    public Intent getOpenIntent() {
+        return IntentUtils.openImage(pathView.getText().toString());
     }
 
-    public void openFileClick(View view) {
-        startActivity(getOpenIntent());
+    private String convertMediaUriToPath(Uri uri) {
+        String[] projection = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+        int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        String path = cursor.getString(columnIndex);
+        cursor.close();
+        return path;
     }
-
-    public abstract Intent getOpenIntent();
 }
