@@ -16,15 +16,15 @@
 
 package com.dmitriy.tarasov.android.intents.demo;
 
-import android.app.ListActivity;
+import android.app.ExpandableListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.dmitriy.tarasov.android.intents.demo.open.OpenAudioActivity;
@@ -53,7 +53,7 @@ import java.util.List;
 /**
  * @author Dmitriy Tarasov
  */
-public class MainActivity extends ListActivity {
+public class MainActivity extends ExpandableListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,96 +63,158 @@ public class MainActivity extends ListActivity {
     }
 
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        ListItem item = (ListItem) getListAdapter().getItem(position);
+    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+        GroupItem item = (GroupItem) getExpandableListAdapter().getChild(groupPosition, childPosition);
         startActivity(item.intent);
+        return true;
     }
 
-    private List<ListItem> fillItems() {
-        List<ListItem> items = new ArrayList<ListItem>();
-        addListItem(items, R.string.share_text, R.string.share_text_descr, ShareTextActivity.class);
-        addListItem(items, R.string.send_sms, R.string.send_sms_descr, SendSmsActivity.class);
-        addListItem(items, R.string.send_email, R.string.send_email_descr, SendEmailActivity.class);
-        addListItem(items, R.string.capture_photo, R.string.capture_photo_descr, CapturePhotoActivity.class);
-        addListItem(items, R.string.crop_image, R.string.crop_image_descr, CropImageActivity.class);
-        addListItem(items, R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);
-        addListItem(items, R.string.dial_phone, R.string.dial_phone_descr, DialPhoneActivity.class);
-        addListItem(items, R.string.open_play_store, R.string.open_play_store_descr, OpenPlayStoreActivity.class);
-        addListItem(items, R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
-        addListItem(items, R.string.open_audio, R.string.open_audio_descr, OpenAudioActivity.class);
-        addListItem(items, R.string.open_video, R.string.open_video_descr, OpenVideoActivity.class);
-        addListItem(items, R.string.open_image, R.string.open_image_descr, OpenImageActivity.class);
-        addListItem(items, R.string.open_text, R.string.open_text_descr, OpenTextActivity.class);
-        addListItem(items, R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
-        addListItem(items, R.string.pick_contact, R.string.pick_contact_descr, PickContactActivity.class);
-        addListItem(items, R.string.show_location_services, R.string.show_location_services_descr, ShowLocationServicesActivity.class);
-        addListItem(items, R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
-        addListItem(items, R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
-        addListItem(items, R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
-        return items;
+    private List<Group> fillItems() {
+        List<Group> groups = new ArrayList<Group>();
+        addGroup(groups, R.string.group_open);
+        addGroup(groups, R.string.group_pick);
+        addGroup(groups, R.string.group_send);
+        addGroup(groups, R.string.group_show);
+        addGroup(groups, R.string.group_other);
+
+        addGroupItem(groups.get(0), R.string.open_play_store, R.string.open_play_store_descr, OpenPlayStoreActivity.class);
+        addGroupItem(groups.get(0), R.string.open_link, R.string.open_link_descr, OpenLinkActivity.class);
+        addGroupItem(groups.get(0), R.string.open_audio, R.string.open_audio_descr, OpenAudioActivity.class);
+        addGroupItem(groups.get(0), R.string.open_video, R.string.open_video_descr, OpenVideoActivity.class);
+        addGroupItem(groups.get(0), R.string.open_image, R.string.open_image_descr, OpenImageActivity.class);
+        addGroupItem(groups.get(0), R.string.open_text, R.string.open_text_descr, OpenTextActivity.class);
+
+        addGroupItem(groups.get(1), R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
+        addGroupItem(groups.get(1), R.string.pick_contact, R.string.pick_contact_descr, PickContactActivity.class);
+
+        addGroupItem(groups.get(2), R.string.send_sms, R.string.send_sms_descr, SendSmsActivity.class);
+        addGroupItem(groups.get(2), R.string.send_email, R.string.send_email_descr, SendEmailActivity.class);
+
+        addGroupItem(groups.get(3), R.string.show_location_services, R.string.show_location_services_descr, ShowLocationServicesActivity.class);
+        addGroupItem(groups.get(3), R.string.show_street_view, R.string.show_street_view_descr, ShowStreetViewActivity.class);
+        addGroupItem(groups.get(3), R.string.show_location, R.string.show_location_descr, ShowLocationActivity.class);
+
+        addGroupItem(groups.get(4), R.string.share_text, R.string.share_text_descr, ShareTextActivity.class);
+        addGroupItem(groups.get(4), R.string.capture_photo, R.string.capture_photo_descr, CapturePhotoActivity.class);
+        addGroupItem(groups.get(4), R.string.crop_image, R.string.crop_image_descr, CropImageActivity.class);
+        addGroupItem(groups.get(4), R.string.call_phone, R.string.call_phone_descr, CallPhoneActivity.class);
+        addGroupItem(groups.get(4), R.string.dial_phone, R.string.dial_phone_descr, DialPhoneActivity.class);
+        addGroupItem(groups.get(4), R.string.find_location, R.string.find_location_descr, FindLocationActivity.class);
+
+        return groups;
     }
 
-    private void addListItem(List<ListItem> list, int titleId, int descriptionId, Class<?> clazz) {
-        list.add(new ListItem(titleId, descriptionId, new Intent(this, clazz)));
+    private void addGroup(List<Group> groups, int titleId) {
+        groups.add(new Group(titleId));
     }
 
-    private void initViews(List<ListItem> listItems) {
-        ListAdapter adapter = new ItemsAdapter(this, listItems);
+    private void addGroupItem(Group group, int titleId, int descriptionId, Class<?> clazz) {
+        group.items.add(new GroupItem(titleId, descriptionId, new Intent(this, clazz)));
+    }
+
+    private void initViews(List<Group> groups) {
+        ExpandableListAdapter adapter = new ItemsAdapter(this, groups);
         setListAdapter(adapter);
     }
 
-    private static class ItemsAdapter extends BaseAdapter {
+    private static class ItemsAdapter extends BaseExpandableListAdapter {
 
         private final Context context;
-        private final List<ListItem> items;
+        private final List<Group> groups;
 
-        private ItemsAdapter(Context context, List<ListItem> items) {
+        private ItemsAdapter(Context context, List<Group> groups) {
             this.context = context;
-            this.items = items;
+            this.groups = groups;
         }
 
         @Override
-        public int getCount() {
-            return items.size();
+        public int getGroupCount() {
+            return groups.size();
         }
 
         @Override
-        public Object getItem(int position) {
-            return items.get(position);
+        public int getChildrenCount(int groupPosition) {
+            return groups.get(groupPosition).items.size();
         }
 
         @Override
-        public long getItemId(int position) {
-            return 0;
+        public Object getGroup(int groupPosition) {
+            return groups.get(groupPosition);
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public Object getChild(int groupPosition, int childPosition) {
+            return groups.get(groupPosition).items.get(childPosition);
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return groupPosition | childPosition;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return false;
+        }
+
+        @Override
+        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+            View rowView = convertView;
+            if (rowView == null) {
+                rowView = View.inflate(context, android.R.layout.simple_expandable_list_item_1, null);
+                GroupHolder holder = new GroupHolder();
+                holder.title = (TextView) rowView.findViewById(android.R.id.text1);
+                rowView.setTag(holder);
+            }
+
+            Group group = (Group) getGroup(groupPosition);
+            GroupHolder holder = (GroupHolder) rowView.getTag();
+            holder.title.setText(group.title);
+            return rowView;
+
+        }
+
+        @Override
+        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
             View rowView = convertView;
             if (rowView == null) {
                 rowView = View.inflate(context, android.R.layout.simple_list_item_2, null);
-                ViewHolder holder = new ViewHolder();
+                GroupItemHolder holder = new GroupItemHolder();
                 holder.title = (TextView) rowView.findViewById(android.R.id.text1);
                 holder.description = (TextView) rowView.findViewById(android.R.id.text2);
                 rowView.setTag(holder);
             }
 
-            ListItem item = (ListItem) getItem(position);
-            ViewHolder holder = (ViewHolder) rowView.getTag();
+            GroupItem item = (GroupItem) getChild(groupPosition, childPosition);
+            GroupItemHolder holder = (GroupItemHolder) rowView.getTag();
             holder.title.setText(item.text);
             holder.description.setText(item.description);
             return rowView;
         }
 
-        private static class ViewHolder {
+        @Override
+        public boolean isChildSelectable(int groupPosition, int childPosition) {
+            return false;
+        }
+
+        private static class GroupHolder {
+            TextView title;
+        }
+
+        private static class GroupItemHolder {
             TextView title;
             TextView description;
         }
     }
 
-    private class ListItem {
+    private class GroupItem {
 
-        private ListItem(int textId, int descriptionId, Intent intent) {
+        private GroupItem(int textId, int descriptionId, Intent intent) {
             this.text = getString(textId);
             this.description = getString(descriptionId);
             this.intent = intent;
@@ -162,5 +224,15 @@ public class MainActivity extends ListActivity {
         String description;
         Intent intent;
 
+    }
+
+    private class Group {
+        private Group(int titleId) {
+            this.title = getString(titleId);
+            items = new ArrayList<GroupItem>();
+        }
+
+        String title;
+        List<GroupItem> items;
     }
 }

@@ -19,6 +19,13 @@
 
     <string name="app_name">Android Intents Demo</string>
 
+    <!-- Groups -->
+    <string name="group_open">Open</string>
+    <string name="group_pick">Pick</string>
+    <string name="group_send">Send</string>
+    <string name="group_show">Show</string>
+    <string name="group_other">Other</string>
+
     <!-- Intents -->
     <string name="capture_photo">Capture Photo</string>
     <string name="crop_image">Crop Image</string>
