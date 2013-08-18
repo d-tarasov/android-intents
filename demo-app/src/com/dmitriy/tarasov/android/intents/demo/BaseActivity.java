@@ -17,9 +17,12 @@
 package com.dmitriy.tarasov.android.intents.demo;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 /**
  * @author Dmitriy Tarasov
@@ -43,6 +46,24 @@ public class BaseActivity extends Activity {
 
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void startActivity(Intent intent) {
+        try {
+            super.startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.app_not_found_ex, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode) {
+        try {
+            super.startActivityForResult(intent, requestCode);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, R.string.app_not_found_ex, Toast.LENGTH_SHORT).show();
         }
     }
 }

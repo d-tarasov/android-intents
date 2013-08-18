@@ -199,7 +199,7 @@ public class MainActivity extends ExpandableListActivity {
 
         @Override
         public boolean isChildSelectable(int groupPosition, int childPosition) {
-            return false;
+            return true;
         }
 
         private static class GroupHolder {

@@ -121,5 +121,6 @@
     <string name="pick_with_phones">Pick with phones</string>
     <string name="pick_with_emails">Pick with email</string>
     <string name="pick_a_contact">Pick a contact</string>
+    <string name="app_not_found_ex">Can not find appropriate app on the device</string>
 
 </resources>

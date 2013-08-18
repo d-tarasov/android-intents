@@ -90,7 +90,6 @@ At this moment collection includes this intents
 ### Future releases
 - integration with zxing intent integrator
 - add icons to list items
-- properly react in demo app on situations when target app isn't available (app mustn't crash)
 - dimensions in demo by guidelines
 - about dialog
 
