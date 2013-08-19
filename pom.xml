@@ -75,8 +75,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <project.version.name>1.0.0</project.version.name>
-        <project.version.code>100</project.version.code>
+        <project.version.name>1.1.0</project.version.name>
+        <project.version.code>110</project.version.code>
 
         <project.verbosity>true</project.verbosity>
 
