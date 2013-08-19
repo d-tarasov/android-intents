@@ -166,9 +166,9 @@ public class MainActivity extends ExpandableListActivity {
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
             View rowView = convertView;
             if (rowView == null) {
-                rowView = View.inflate(context, android.R.layout.simple_expandable_list_item_1, null);
+                rowView = View.inflate(context, R.layout.list_item_group, null);
                 GroupHolder holder = new GroupHolder();
-                holder.title = (TextView) rowView.findViewById(android.R.id.text1);
+                holder.title = (TextView) rowView.findViewById(R.id.text);
                 rowView.setTag(holder);
             }
 
