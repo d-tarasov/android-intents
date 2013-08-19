@@ -16,10 +16,15 @@
 
 package com.dmitriy.tarasov.android.intents.demo;
 
+import android.app.AlertDialog;
 import android.app.ExpandableListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -67,6 +72,32 @@ public class MainActivity extends ExpandableListActivity {
         GroupItem item = (GroupItem) getExpandableListAdapter().getChild(groupPosition, childPosition);
         startActivity(item.intent);
         return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("About");
+                builder.setView(View.inflate(this, R.layout.dialog_about, null));
+                builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private List<Group> fillItems() {

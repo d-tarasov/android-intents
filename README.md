@@ -90,7 +90,7 @@ At this moment collection includes this intents
 ### Future releases
 - integration with zxing intent integrator
 - add icons to list items
-- about dialog
+- demo app UI on old androids
 
 License
 -----

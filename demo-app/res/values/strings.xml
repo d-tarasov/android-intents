@@ -123,5 +123,10 @@
     <string name="pick_a_contact">Pick a contact</string>
     <string name="app_not_found_ex">Can not find appropriate app on the device</string>
     <string name="to">To</string>
+    <string name="about">About</string>
+    <string name="about_text">Android Intents Demo is a demo application for android open source
+        library "Android Intents" - collection of well-known intents placed at github.com. For more
+        info please visit https://github.com/d-tarasov/android-intents
+    </string>
 
 </resources>
