@@ -18,7 +18,7 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/VerticalLayout">
+    style="@style/ScreenContent.Vertical">
 
     <LinearLayout
         android:id="@+id/title_wrapper"
@@ -26,14 +26,12 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/longitude"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/latitude"/>
     </LinearLayout>
@@ -45,16 +43,14 @@
         android:layout_below="@+id/title_wrapper">
 
         <EditText
+            style="@style/Row"
             android:id="@+id/longitude"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
         <EditText
+            style="@style/Row"
             android:id="@+id/latitude"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
     </LinearLayout>
@@ -66,14 +62,12 @@
         android:layout_below="@+id/location_wrapper">
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/yaw"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/pitch"/>
     </LinearLayout>
@@ -85,38 +79,33 @@
         android:layout_below="@+id/yaw_pitch_titles_wrapper">
 
         <EditText
+            style="@style/Row"
             android:id="@+id/yaw"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
         <EditText
+            style="@style/Row"
             android:id="@+id/pitch"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
     </LinearLayout>
 
     <TextView
+        style="@style/Section"
         android:id="@+id/zoom_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/yaw_pitch_wrapper"
         android:text="@string/zoom"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/zoom"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/zoom_title"
         android:inputType="number"/>
 
     <TextView
+        style="@style/Section"
         android:id="@+id/map_zoom_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/zoom"
         android:text="@string/map_zoom"/>
 

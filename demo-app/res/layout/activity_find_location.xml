@@ -19,18 +19,16 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/VerticalLayout">
+    style="@style/ScreenContent.Vertical">
 
     <TextView
+        style="@style/Section"
         android:id="@+id/title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:text="@string/query_string"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/query"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:text="@string/default_query"/>
 

@@ -18,35 +18,29 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/VerticalLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    style="@style/ScreenContent.Vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/output_x_title"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/output_y_title"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/aspect_x_title"/>
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            style="@style/Section"
             android:layout_weight="1"
             android:text="@string/aspect_y_title"/>
 
@@ -57,39 +51,34 @@
         android:layout_height="wrap_content">
 
         <EditText
+            style="@style/Row"
             android:id="@+id/output_x"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
         <EditText
+            style="@style/Row"
             android:id="@+id/output_y"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
         <EditText
+            style="@style/Row"
             android:id="@+id/aspect_x"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
         <EditText
+            style="@style/Row"
             android:id="@+id/aspect_y"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number"/>
 
     </LinearLayout>
 
     <CheckBox
+        style="@style/Row"
         android:id="@+id/scale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/scale"/>
 
     <LinearLayout
@@ -98,16 +87,14 @@
         android:layout_height="wrap_content">
 
         <TextView
+            style="@style/Section"
             android:text="@string/source_image"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/textView"/>
 
         <TextView
+            style="@style/Section"
             android:text="@string/cropped_image"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"/>
     </LinearLayout>
 

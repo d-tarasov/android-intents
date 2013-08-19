@@ -90,7 +90,6 @@ At this moment collection includes this intents
 ### Future releases
 - integration with zxing intent integrator
 - add icons to list items
-- dimensions in demo by guidelines
 - about dialog
 
 License

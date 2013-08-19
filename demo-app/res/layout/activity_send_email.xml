@@ -18,46 +18,41 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/VerticalLayout">
+    style="@style/ScreenContent.Vertical">
 
     <TextView
+        style="@style/Section"
         android:id="@+id/to_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/subject"/>
+        android:text="@string/to"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/to"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/to_title"
         android:text="@string/default_email"/>
 
     <TextView
+        style="@style/Section"
         android:id="@+id/subject_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/to"
         android:text="@string/subject"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/subject"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/subject_title"
         android:text="@string/default_email_subject"
         android:inputType="phone"/>
 
     <TextView
+        style="@style/Section"
         android:id="@+id/text_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/subject"
         android:text="@string/text_to_share"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/body"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_title"
         android:text="@string/default_body"/>

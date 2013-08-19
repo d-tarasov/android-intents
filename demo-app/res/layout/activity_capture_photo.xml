@@ -18,24 +18,22 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/VerticalLayout">
+    style="@style/ScreenContent.Vertical">
 
     <TextView
-        android:text="@string/file_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/Section"
+        android:text="@string/file_name"/>
 
     <EditText
+        style="@style/Row"
         android:id="@+id/file_name"
         android:text="@string/default_file_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:inputType="text"/>
 
     <ImageView
         android:id="@+id/captured_image"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/captured_image"/>
