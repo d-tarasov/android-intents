@@ -59,7 +59,7 @@ At this moment collection includes this intents
 
 ## Release History
 
-### v1.1.0 (?/?/2013): New features
+### v1.1.0 (20/08/2013): New features
 - Open audio intent
 - Open video intent
 - Open image intent
