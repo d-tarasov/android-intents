@@ -150,6 +150,7 @@
                     <preparationGoals>clean install</preparationGoals>
                     <goals>deploy</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <pushChanges>false</pushChanges>
                 </configuration>
             </plugin>
             <plugin>
