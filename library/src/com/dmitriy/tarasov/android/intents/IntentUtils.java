@@ -38,17 +38,32 @@ import java.util.List;
 public class IntentUtils {
 
     /**
-     * Open app page at Google Play
+     * Open app page at Google Play. If Play Store application isn't available on the device
+     * then web browser will be opened
      *
      * @param context Application context
      */
     public static Intent openPlayStore(Context context) {
+        return openPlayStore(context, true);
+    }
+
+    /**
+     * Open app page at Google Play
+     *
+     * @param context       Application context
+     * @param openInBrowser Should we try to open application page in web browser
+     *                      if Play Store app not found on device
+     */
+    public static Intent openPlayStore(Context context, boolean openInBrowser) {
         String appPackageName = context.getPackageName();
         Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
         if (isIntentAvailable(context, marketIntent)) {
             return marketIntent;
         }
-        return openLink("https://play.google.com/store/apps/details?id=" + appPackageName);
+        if (openInBrowser) {
+            return openLink("https://play.google.com/store/apps/details?id=" + appPackageName);
+        }
+        return marketIntent;
     }
 
     /**
