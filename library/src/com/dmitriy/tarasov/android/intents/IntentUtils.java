@@ -45,11 +45,10 @@ public class IntentUtils {
     public static Intent openPlayStore(Context context) {
         String appPackageName = context.getPackageName();
         Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
-        // if the market application is not installed open a web browser
-        if (context.getPackageManager().queryIntentActivities(marketIntent, 0).size() == 0) {
-            marketIntent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName));
+        if (isIntentAvailable(context, marketIntent)) {
+            return marketIntent;
         }
-        return marketIntent;
+        return openLink("https://play.google.com/store/apps/details?id=" + appPackageName);
     }
 
     /**
