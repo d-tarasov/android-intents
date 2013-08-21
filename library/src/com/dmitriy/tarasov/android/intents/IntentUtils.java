@@ -44,7 +44,11 @@ public class IntentUtils {
      */
     public static Intent openPlayStore(Context context) {
         String appPackageName = context.getPackageName();
-        return new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
+        Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
+        if (isIntentAvailable(context, marketIntent)) {
+            return marketIntent;
+        }
+        return openLink("https://play.google.com/store/apps/details?id=" + appPackageName);
     }
 
     /**
