@@ -378,6 +378,15 @@ public class IntentUtils {
     }
 
     /**
+     * Pick image from gallery
+     */
+    public static Intent pickImage() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        return intent;
+    }
+
+    /**
      * Dials (but does not actually initiate the call) the number given.
      * Telephone number normalization described for {@link #callPhone(String)} applies to dial as well.
      *

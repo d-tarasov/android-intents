@@ -34,6 +34,7 @@ At this moment collection includes this intents
 - **Open Text** - opens a text file in appropriate app
 - **Pick File** - opens file manager to choose a file
 - **Pick Contact** - pick a contact from phone book
+- **Pick Image** - pick image from gallery
 - **Capture Photo** - call standard camera app for taking a shot
 - **Crop Image** - call gallery app to crop your image
 
@@ -58,6 +59,9 @@ At this moment collection includes this intents
 ```
 
 ## Release History
+
+### v1.2.0 (?/?/2013): New features
+- Pick image from gallery
 
 ### v1.1.0 (20/08/2013): New features
 - Open audio intent

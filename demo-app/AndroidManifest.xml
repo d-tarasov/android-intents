@@ -75,6 +75,10 @@
             android:label="@string/pick_contact"/>
 
         <activity
+            android:name=".pick.PickImageActivity"
+            android:label="@string/pick_image"/>
+
+        <activity
             android:name=".show.ShowLocationActivity"
             android:label="@string/show_location"/>
 

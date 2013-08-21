@@ -46,6 +46,7 @@ import com.dmitriy.tarasov.android.intents.demo.other.FindLocationActivity;
 import com.dmitriy.tarasov.android.intents.demo.other.ShareTextActivity;
 import com.dmitriy.tarasov.android.intents.demo.pick.PickContactActivity;
 import com.dmitriy.tarasov.android.intents.demo.pick.PickFileActivity;
+import com.dmitriy.tarasov.android.intents.demo.pick.PickImageActivity;
 import com.dmitriy.tarasov.android.intents.demo.send.SendEmailActivity;
 import com.dmitriy.tarasov.android.intents.demo.send.SendSmsActivity;
 import com.dmitriy.tarasov.android.intents.demo.show.ShowLocationActivity;
@@ -117,6 +118,7 @@ public class MainActivity extends ExpandableListActivity {
 
         addGroupItem(groups.get(1), R.string.pick_file, R.string.pick_file_descr, PickFileActivity.class);
         addGroupItem(groups.get(1), R.string.pick_contact, R.string.pick_contact_descr, PickContactActivity.class);
+        addGroupItem(groups.get(1), R.string.pick_image, R.string.pick_image_descr, PickImageActivity.class);
 
         addGroupItem(groups.get(2), R.string.send_sms, R.string.send_sms_descr, SendSmsActivity.class);
         addGroupItem(groups.get(2), R.string.send_email, R.string.send_email_descr, SendEmailActivity.class);
