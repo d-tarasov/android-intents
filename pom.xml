@@ -19,8 +19,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dmitriy.tarasov</groupId>
-    <artifactId>parent</artifactId>
+    <groupId>com.dmitriy-tarasov</groupId>
+    <artifactId>android-intents-parent</artifactId>
     <version>1.1.0</version>
 
     <parent>
@@ -54,7 +54,7 @@
         <developer>
             <name>Dmitriy Tarasov</name>
             <email>dm.vl.tarasov@gmail.com</email>
-            <id>d.tarasov</id>
+            <id>d-tarasov</id>
             <url>http://dmitriy-tarasov.com</url>
             <timezone>+4</timezone>
             <roles>
@@ -95,12 +95,12 @@
 
     <distributionManagement>
         <repository>
-            <id>repo</id>
-            <url>https://github.com/d-tarasov/maven-repo/raw/master/releases</url>
+            <id>sonatype-nexus-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
-            <id>snapshot-repo</id>
-            <url>https://github.com/d-tarasov/maven-repo/raw/master/snapshots</url>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -138,8 +138,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <skip>true</skip>
+                    <!--<skip>true</skip>-->
+                    <keyname>19228FD6</keyname>
                 </configuration>
             </plugin>
             <plugin>
