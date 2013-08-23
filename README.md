@@ -39,23 +39,23 @@ At this moment collection includes this intents
 - **Crop Image** - call gallery app to crop your image
 
 ## Installation
-- add the following repository into your pom.xml
+The library is available on maven central repository, just download jar and add it to your
+project classpath or add the following dependency
 
-```xml
-<repository>
-  <id>repo</id>
-  <url>https://github.com/d-tarasov/maven-repo/raw/master/releases</url>
-</repository>
-```
-
-- add dependency
+**Maven**
 
 ```xml
 <dependency>
-  <groupId>com.dmitriy.tarasov</groupId>
-  <artifactId>android-intents</artifactId>
-  <version>%latest_version%</version>
+    <groupId>com.dmitriy-tarasov</groupId>
+    <artifactId>android-intents</artifactId>
+    <version>%latest_version%</version>
 </dependency>
+```
+
+**Gradle**
+
+```xml
+compile 'com.dmitriy-tarasov:android-intents:%latest_version%'
 ```
 
 ## Release History

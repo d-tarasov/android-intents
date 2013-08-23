@@ -87,7 +87,7 @@ public class MainActivity extends ExpandableListActivity {
         switch (item.getItemId()) {
             case R.id.action_about:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("About");
+                builder.setTitle(R.string.about);
                 builder.setView(View.inflate(this, R.layout.dialog_about, null));
                 builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
