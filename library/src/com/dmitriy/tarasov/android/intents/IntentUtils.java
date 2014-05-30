@@ -24,6 +24,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Contacts;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -384,14 +385,27 @@ public class IntentUtils {
      */
     public static Intent pickContact(String scope) {
         Intent intent;
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR) {
-            intent = new Intent(Intent.ACTION_PICK, Contacts.People.CONTENT_URI);
-        } else {
+        if (isSupportsContactsV2()) {
             intent = new Intent(Intent.ACTION_PICK, Uri.parse("content://com.android.contacts/contacts"));
+        } else {
+            intent = new Intent(Intent.ACTION_PICK, Contacts.People.CONTENT_URI);
         }
 
         if (!TextUtils.isEmpty(scope)) {
             intent.setType(scope);
+        }
+        return intent;
+    }
+
+    /**
+     * Pick contact only from contacts with telephone numbers
+     */
+    public static Intent pickContactWithPhone() {
+        Intent intent;
+        if (isSupportsContactsV2()) {
+            intent = pickContact(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
+        } else { // pre Eclair, use old contacts API
+            intent = pickContact(Contacts.Phones.CONTENT_TYPE);
         }
         return intent;
     }
@@ -494,5 +508,9 @@ public class IntentUtils {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(uri, mimeType);
         return intent;
+    }
+
+    private static boolean isSupportsContactsV2() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR;
     }
 }

@@ -62,12 +62,7 @@ public class PickContactActivity extends BaseActivity {
     }
 
     public void pickWithPhonesClick(View view) {
-        Intent pick;
-        if (isSupportsContactsV2()) {
-            pick = IntentUtils.pickContact(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE);
-        } else { // pre Eclair, use old contacts API
-            pick = IntentUtils.pickContact(Contacts.Phones.CONTENT_TYPE);
-        }
+        Intent pick = IntentUtils.pickContactWithPhone();
         startActivityForResult(pick, PICK_REQ);
     }
 
