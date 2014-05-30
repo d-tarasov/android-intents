@@ -80,13 +80,13 @@
 
         <project.verbosity>true</project.verbosity>
 
-        <android.version>4.2.2_r2</android.version>
+        <android.version>4.1.1.4</android.version>
         <android.platform>17</android.platform>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>android</groupId>
+            <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
             <version>${android.version}</version>
             <scope>provided</scope>
@@ -119,7 +119,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.6.1</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <sdk>
                             <platform>${android.platform}</platform>
