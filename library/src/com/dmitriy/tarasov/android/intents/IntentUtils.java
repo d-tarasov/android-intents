@@ -111,16 +111,27 @@ public class IntentUtils {
     /**
      * Send SMS message using built-in app
      *
+     * @param context Application context
      * @param to      Receiver phone number
      * @param message Text to send
      */
-    public static Intent sendSms(String to, String message) {
-        Uri smsUri = Uri.parse("tel:" + to);
-        Intent intent = new Intent(Intent.ACTION_VIEW, smsUri);
-        intent.putExtra("address", to);
-        intent.putExtra("sms_body", message);
-        intent.setType("vnd.android-dir/mms-sms");
-        return intent;
+    public static Intent sendSms(Context context, String to, String message) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            String defaultSmsPackageName = Telephony.Sms.getDefaultSmsPackage(context);
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + to));
+            intent.putExtra("sms_body", message);
+            if (defaultSmsPackageName != null) {
+                intent.setPackage(defaultSmsPackageName);
+            }
+            return intent;
+        } else {
+            Uri smsUri = Uri.parse("tel:" + to);
+            Intent intent = new Intent(Intent.ACTION_VIEW, smsUri);
+            intent.putExtra("address", to);
+            intent.putExtra("sms_body", message);
+            intent.setType("vnd.android-dir/mms-sms");
+            return intent;
+        }
     }
 
     /**
